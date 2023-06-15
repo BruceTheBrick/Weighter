@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "840352233604",
+    "project_id": "weighter-29c9e",
+    "storage_bucket": "weighter-29c9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840352233604:android:b23b21fa228b4847652ad1",
+        "android_client_info": {
+          "package_name": "au.com.weighter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840352233604-cvqbo101g3jr0rk12s0ahln11tefiomq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKAmAf-Si_j-7m5LEJUCgyTcFAYbomtFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840352233604-cvqbo101g3jr0rk12s0ahln11tefiomq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "840352233604-ml4s63bq0pr57ge3ad049jismo9fsar5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "au.com.weighter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
