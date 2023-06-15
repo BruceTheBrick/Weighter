@@ -1,11 +1,10 @@
-﻿namespace Weighter;
-
-public partial class App : Application
+﻿namespace Weighter
 {
-    public App()
+    public partial class App
     {
-        InitializeComponent();
-
-        MainPage = new AppShell();
+        public App()
+        {
+            InitializeComponent();
+        }
     }
 }
