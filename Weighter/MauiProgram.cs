@@ -17,7 +17,7 @@ namespace Weighter
             EnableDebug(builder);
             return builder.Build();
         }
-        
+
         private static void ConfigureFonts(IFontCollection fonts)
         {
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

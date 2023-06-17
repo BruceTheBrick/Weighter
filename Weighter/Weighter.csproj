@@ -72,4 +72,9 @@
         <Compile Remove="**\iOS\**\*.cs" />
         <None Include="**\iOS\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Platforms\Android\Services\" />
+      <Folder Include="Platforms\iOS\Services\" />
+    </ItemGroup>
 </Project>
