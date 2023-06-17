@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Weighter.Core;
 using Weighter.Core.Services;
 using Weighter.Core.Services.Interfaces;
 using Weighter.Features.Dashboard;
@@ -25,6 +26,7 @@ namespace Weighter
         {
             containerRegistry.Register<IBaseService, BaseService>();
             containerRegistry.Register<INavigationService, NavigationService>();
+            containerRegistry.Register<IThemeService, ThemeService>();
             
             RegisterIosPlatformServices(containerRegistry);
             RegisterAndroidPlatformServices(containerRegistry);
