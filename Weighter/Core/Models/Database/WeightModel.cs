@@ -1,8 +1,8 @@
 ﻿using SQLite;
 
-namespace Weighter.Core.Models
+namespace Weighter.Core.Models.Database
 {
-    public class WeightEntry : BaseTable
+    public class WeightModel : BaseTable
     {
         [PrimaryKey]
         [AutoIncrement]

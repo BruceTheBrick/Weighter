@@ -65,6 +65,16 @@
         <Compile Remove="**\Android\**\*.cs" />
         <None Include="**\Android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
         <None Remove="FodyWeavers.xml" />
+        <Compile Update="Resources\Copy Registers\RegistrationRegister.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>RegistrationRegister.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Resources\Copy Registers\InitRegister.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>InitRegister.resx</DependentUpon>
+        </Compile>
     </ItemGroup>
 
     <!-- IOS-->
@@ -81,5 +91,16 @@
     <ItemGroup>
       <Folder Include="Platforms\Android\Services\" />
       <Folder Include="Platforms\iOS\Services\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Copy Registers\RegistrationRegister.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>RegistrationRegister.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Copy Registers\InitRegister.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>InitRegister.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 </Project>

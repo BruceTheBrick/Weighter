@@ -1,7 +1,7 @@
-﻿using Bitspace.Tests.Base;
-using Weighter.Core.Services.Interfaces;
+﻿using Weighter.Core.Services.Interfaces;
 using Weighter.Features.Dashboard;
 using Weighter.Features.Weight_Tracking;
+using Weighter.Tests.Base;
 using Xunit;
 
 namespace Weighter.Tests.Features.Dashboard

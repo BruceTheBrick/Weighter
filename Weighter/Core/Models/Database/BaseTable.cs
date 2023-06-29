@@ -1,4 +1,4 @@
-﻿namespace Weighter.Core.Models
+﻿namespace Weighter.Core.Models.Database
 {
     public class BaseTable
     {

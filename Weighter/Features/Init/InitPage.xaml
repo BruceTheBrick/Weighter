@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Weighter.Features.Init.InitPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:copyRegisters="clr-namespace:Weighter.Resources.Copy_Registers">
+    <Grid>
+        <Image Source="dotnet_bot.png" />
+        <ActivityIndicator IsRunning="True" />
+        <Label Text="{x:Static copyRegisters:InitRegister.INIT_001}" />
+        <Label Text="{x:Static copyRegisters:InitRegister.INIT_002}" />
+    </Grid>
+</ContentPage>

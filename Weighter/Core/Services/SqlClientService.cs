@@ -37,8 +37,29 @@ namespace Weighter.Core.Services
             return _db.Insert(value);
         }
 
+        public int InsertRange<T>(IEnumerable<T> values)
+        {
+            return _db.InsertAll(values);
+        }
+
         public int Update<T>(T value)
         {
+            return _db.Update(value);
+        }
+
+        public int UpdateRange<T>(IEnumerable<T> values)
+        {
+            return _db.UpdateAll(values);
+        }
+
+        public int CreateOrUpdate<T>(T value) where T : new()
+        {
+            var existingEntry = _db.Table<T>().FirstOrDefault(entry => entry.Equals(value));
+            if (existingEntry == null)
+            {
+                return _db.Insert(value);
+            }
+
             return _db.Update(value);
         }
 

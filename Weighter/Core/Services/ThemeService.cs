@@ -1,7 +1,8 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Core
+namespace Weighter.Core.Services
 {
     public class ThemeService : IThemeService, INotifyPropertyChanged
     {

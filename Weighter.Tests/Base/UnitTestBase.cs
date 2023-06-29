@@ -2,7 +2,7 @@
 using Moq;
 using Moq.AutoMock;
 
-namespace Bitspace.Tests.Base
+namespace Weighter.Tests.Base
 {
     public class UnitTestBase<T> where T : class
     {
