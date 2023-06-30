@@ -1,6 +1,6 @@
 ﻿using Weighter.Core.Services.Interfaces;
 using Weighter.Features.Dashboard;
-using Weighter.Features.Weight_Tracking;
+using Weighter.Features.WeightTracking;
 using Weighter.Tests.Base;
 using Xunit;
 
@@ -16,7 +16,7 @@ namespace Weighter.Tests.Features.Dashboard
             //Arrange
 
             //Act
-            Sut.NavigateToWeightSummaryPageCommand.Execute(null);
+            await Sut.NavigateToWeightSummaryPageCommand.ExecuteAsync(null);
 
             //Assert
             Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync(nameof(WeightSummaryPage)));

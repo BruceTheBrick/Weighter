@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Weight_Tracking;
+using Weighter.Features.WeightTracking;
 
 namespace Weighter.Features.Dashboard
 {

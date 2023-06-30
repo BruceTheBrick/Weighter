@@ -11,7 +11,7 @@ namespace Weighter.Core.Services
         {
             NavigationService = navigationService;
         }
-        
+
         public INavigationService NavigationService { get; }
     }
 }

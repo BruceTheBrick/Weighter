@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
-using Weighter.Core;
+using Weighter.Core.Services;
 using Weighter.Core.Services.Interfaces;
+using Weighter.Features.Init;
 
 namespace Weighter
 {

@@ -4,10 +4,16 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:copyRegisters="clr-namespace:Weighter.Resources.Copy_Registers">
-    <Grid>
-        <Image Source="dotnet_bot.png" />
-        <ActivityIndicator IsRunning="True" />
-        <Label Text="{x:Static copyRegisters:InitRegister.INIT_001}" />
-        <Label Text="{x:Static copyRegisters:InitRegister.INIT_002}" />
-    </Grid>
+    <StackLayout VerticalOptions="Center">
+        <Image
+            Margin="0,0,0,16"
+            HorizontalOptions="Center"
+            Source="dotnet_bot" />
+        <ActivityIndicator
+            Margin="0,0,0,16"
+            HorizontalOptions="Center"
+            IsRunning="True" />
+        <Label HorizontalTextAlignment="Center" Text="{x:Static copyRegisters:InitRegister.INIT_001}" />
+        <Label HorizontalTextAlignment="Center" Text="{x:Static copyRegisters:InitRegister.INIT_002}" />
+    </StackLayout>
 </ContentPage>
