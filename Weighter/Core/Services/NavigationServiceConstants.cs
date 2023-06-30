@@ -4,6 +4,6 @@ namespace Weighter.Core.Services
 {
     public partial class NavigationService
     {
-        public const string Startup = $"/{nameof(InitPage)}";
+        public const string Startup = $"/{nameof(NavigationPage)}/{nameof(InitPage)}";
     }
 }

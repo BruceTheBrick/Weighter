@@ -16,7 +16,10 @@ namespace Weighter
         public static void Configure(PrismAppBuilder builder)
         {
             builder.RegisterTypes(RegisterTypes);
-            builder.OnAppStart(navigation => navigation.NavigateAsync(NavigationService.Startup));
+            builder.OnAppStart(nav =>
+            {
+                var t = nav.NavigateAsync(nameof(InitPage));
+            });
         }
 
         private static void RegisterTypes(IContainerRegistry containerRegistry)

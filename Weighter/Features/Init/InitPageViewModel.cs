@@ -35,12 +35,12 @@ namespace Weighter.Features.Init
 
         private Task NavigateToDashboard()
         {
-            return NavigationService.NavigateAsync(nameof(DashboardPage));
+            return NavigationService.NavigateAsync($"/{nameof(DashboardPage)}");
         }
 
         private Task NavigateToRegistration()
         {
-            return NavigationService.NavigateAsync(nameof(WelcomePage));
+            return NavigationService.NavigateAsync($"/{nameof(WelcomePage)}");
         }
     }
 }

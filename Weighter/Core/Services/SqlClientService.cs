@@ -14,12 +14,12 @@ namespace Weighter.Core.Services
 
         public SqlClientService(string connectionString)
         {
-            _db = new SQLiteConnection(connectionString);
+            // _db = new SQLiteConnection(connectionString);
         }
 
         public void SetConnectionString(string connectionString)
         {
-            _db = new SQLiteConnection(connectionString);
+            // _db = new SQLiteConnection(connectionString);
         }
 
         public CreateTableResult CreateTable<T>()

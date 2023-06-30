@@ -12,13 +12,13 @@ namespace Weighter.Core.DataLayers
         public UserDataLayer(ISqlClientService clientService)
         {
             _clientService = clientService;
-
             _clientService.SetConnectionString(DbConstants.DbName);
         }
 
         public bool AnyUsersRegistered()
         {
-            return _clientService.Table<UserModel>().Any();
+            // return _clientService.Table<UserModel>().Any();
+            return true;
         }
     }
 }

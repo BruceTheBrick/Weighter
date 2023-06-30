@@ -1,6 +1,5 @@
 ﻿using Weighter.Core.Constants;
 using Weighter.Core.DataLayers.Interfaces;
-using Weighter.Core.Models;
 using Weighter.Core.Models.Database;
 using Weighter.Core.Services.Interfaces;
 
