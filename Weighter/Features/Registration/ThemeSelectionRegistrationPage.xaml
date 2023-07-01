@@ -3,11 +3,17 @@
     x:Class="Weighter.Features.Registration.ThemeSelectionRegistrationPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:Weighter.UI.Components"
     xmlns:features="clr-namespace:Weighter.Features"
     xmlns:registration="clr-namespace:Weighter.Features.Registration"
     x:DataType="registration:ThemeSelectionRegistrationPageViewModel">
-    <StackLayout BackgroundColor="White">
-        <Image Source="{AppThemeBinding Dark='ic_moon', Light='ic_sun'}" WidthRequest="60" />
+    <StackLayout>
+        <components:TintedImage
+            Source="{AppThemeBinding Dark='ic_moon',
+                                     Light='ic_sun'}"
+            TintColor="{AppThemeBinding Dark='White',
+                                        Light='Black'}"
+            WidthRequest="60" />
         <Switch IsToggled="{Binding IsDarkModeEnabled}" />
     </StackLayout>
 </features:BasePage>
