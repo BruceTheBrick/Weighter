@@ -1,6 +1,5 @@
 using CommunityToolkit.Mvvm.Input;
 using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Dashboard;
 
 namespace Weighter.Features.Registration
 {
@@ -16,7 +15,7 @@ namespace Weighter.Features.Registration
 
         private Task Continue()
         {
-            return NavigationService.NavigateAsync(nameof(DashboardPage));
+            return NavigationService.NavigateAsync(nameof(UserDetailsRegistrationPage));
         }
     }
 }

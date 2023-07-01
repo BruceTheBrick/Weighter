@@ -17,8 +17,7 @@ namespace Weighter.Core.DataLayers
 
         public bool AnyUsersRegistered()
         {
-            // return _clientService.Table<UserModel>().Any();
-            return true;
+            return _clientService.Table<UserModel>().Any();
         }
     }
 }

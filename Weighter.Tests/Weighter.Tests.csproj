@@ -31,4 +31,13 @@
       <ProjectReference Include="..\Weighter\Weighter.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Microsoft.Maui.Controls">
+        <HintPath>..\..\..\..\..\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.any\7.0.86\ref\net7.0\Microsoft.Maui.Controls.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Maui.Essentials">
+        <HintPath>..\..\..\..\..\Program Files\dotnet\packs\Microsoft.Maui.Essentials.Ref.any\7.0.86\ref\net7.0\Microsoft.Maui.Essentials.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

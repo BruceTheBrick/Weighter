@@ -5,6 +5,7 @@ using Weighter.Core.Services;
 using Weighter.Core.Services.Interfaces;
 using Weighter.Features.Dashboard;
 using Weighter.Features.Init;
+using Weighter.Features.Login;
 using Weighter.Features.Registration;
 using Weighter.Features.WeightTracking;
 using INavigationService = Weighter.Core.Services.Interfaces.INavigationService;
@@ -16,10 +17,7 @@ namespace Weighter
         public static void Configure(PrismAppBuilder builder)
         {
             builder.RegisterTypes(RegisterTypes);
-            builder.OnAppStart(nav =>
-            {
-                var t = nav.NavigateAsync(nameof(InitPage));
-            });
+            builder.OnAppStart(NavigationService.Startup);
         }
 
         private static void RegisterTypes(IContainerRegistry containerRegistry)
@@ -42,12 +40,15 @@ namespace Weighter
             containerRegistry.Register<ISqlClientService, SqlClientService>();
             containerRegistry.Register<ITaskDelayService, TaskDelayService>();
             containerRegistry.Register<IDeviceInfo, DeviceInfoService>();
+            containerRegistry.Register<ILoggerService, LoggerService>();
+            containerRegistry.Register<IAppInitializationService, AppInitializationService>();
         }
 
         private static void RegisterDataLayers(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IUserDataLayer, UserDataLayer>();
             containerRegistry.Register<IWeighterDataLayer, WeighterDataLayer>();
+            containerRegistry.Register<IWeighterDatabase, WeighterDatabase>();
         }
 
         private static void RegisterDatabaseServices(IContainerRegistry containerRegistry)
@@ -61,6 +62,7 @@ namespace Weighter
             containerRegistry.RegisterForNavigation<WelcomePage, WelcomePageViewModel>();
             containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
             containerRegistry.RegisterForNavigation<WeightSummaryPage, WeightSummaryPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
         }
 
         [Conditional("IOS")]

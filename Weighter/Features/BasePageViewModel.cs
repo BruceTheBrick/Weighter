@@ -10,10 +10,12 @@ namespace Weighter.Features
         public BasePageViewModel(IBaseService baseService)
         {
             NavigationService = baseService.NavigationService;
+            LoggerService = baseService.LoggerService;
         }
-        
+
         public INavigationService NavigationService { get; }
-        
+        public ILoggerService LoggerService { get; }
+
         public virtual void OnAppearing()
         {
             _ = OnAppearingAsync();

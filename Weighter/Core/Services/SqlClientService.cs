@@ -7,19 +7,23 @@ namespace Weighter.Core.Services
     [ExcludeFromCodeCoverage]
     public class SqlClientService : ISqlClientService, IDisposable
     {
+        private readonly ILoggerService _loggerService;
         private SQLiteConnection _db;
-        public SqlClientService()
+        public SqlClientService(ILoggerService loggerService)
         {
-        }
-
-        public SqlClientService(string connectionString)
-        {
-            // _db = new SQLiteConnection(connectionString);
+            _loggerService = loggerService;
         }
 
         public void SetConnectionString(string connectionString)
         {
-            // _db = new SQLiteConnection(connectionString);
+            try
+            {
+                _db = new SQLiteConnection(connectionString);
+            }
+            catch (Exception e)
+            {
+                _loggerService.Log(e.Message);
+            }
         }
 
         public CreateTableResult CreateTable<T>()

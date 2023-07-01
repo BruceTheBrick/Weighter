@@ -6,11 +6,14 @@
     xmlns:copyRegisters="clr-namespace:Weighter.Resources.Copy_Registers"
     xmlns:registration="clr-namespace:Weighter.Features.Registration"
     x:DataType="registration:WelcomePageViewModel">
-    <Grid>
-        <StackLayout VerticalOptions="End">
+    <Grid Padding="16">
+        <StackLayout VerticalOptions="Center">
             <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_001}" />
             <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_002}" />
-            <Button Command="{Binding ContinueCommand}" Text="{x:Static copyRegisters:RegistrationRegister.REG_003}" />
         </StackLayout>
+        <Button
+            Command="{Binding ContinueCommand}"
+            Text="{x:Static copyRegisters:RegistrationRegister.REG_003}"
+            VerticalOptions="End" />
     </Grid>
 </ContentPage>
