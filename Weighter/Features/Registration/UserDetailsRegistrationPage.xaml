@@ -3,8 +3,18 @@
     x:Class="Weighter.Features.Registration.UserDetailsRegistrationPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:features="clr-namespace:Weighter.Features">
-    <Grid>
-        <Entry />
-    </Grid>
+    xmlns:copyRegisters="clr-namespace:Weighter.Resources.Copy_Registers"
+    xmlns:features="clr-namespace:Weighter.Features"
+    xmlns:registration="clr-namespace:Weighter.Features.Registration"
+    x:DataType="registration:UserDetailsRegistrationPageViewModel">
+    <StackLayout>
+        <Grid>
+            <Entry />
+        </Grid>
+        <Button
+            Margin="16"
+            Command="{Binding NextCommand}"
+            Text="{x:Static copyRegisters:GlobalRegister.GLOBAL_002}"
+            VerticalOptions="End" />
+    </StackLayout>
 </features:BasePage>

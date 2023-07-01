@@ -30,13 +30,13 @@ namespace Weighter
         {
             RegisterDataLayers(containerRegistry);
             RegisterDatabaseServices(containerRegistry);
+            RegisterSingletons(containerRegistry);
 
             RegisterIosPlatformServices(containerRegistry);
             RegisterAndroidPlatformServices(containerRegistry);
 
             containerRegistry.Register<IBaseService, BaseService>();
             containerRegistry.Register<INavigationService, NavigationService>();
-            containerRegistry.Register<IThemeService, ThemeService>();
             containerRegistry.Register<ISqlClientService, SqlClientService>();
             containerRegistry.Register<ITaskDelayService, TaskDelayService>();
             containerRegistry.Register<IDeviceInfo, DeviceInfoService>();
@@ -55,6 +55,11 @@ namespace Weighter
         {
         }
 
+        private static void RegisterSingletons(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterSingleton<IThemeService, ThemeService>();
+        }
+
         private static void RegisterPagesForNavigation(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
@@ -63,6 +68,8 @@ namespace Weighter
             containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
             containerRegistry.RegisterForNavigation<WeightSummaryPage, WeightSummaryPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<UserDetailsRegistrationPage, UserDetailsRegistrationPageViewModel>();
+            containerRegistry.RegisterForNavigation<ThemeSelectionRegistrationPage, ThemeSelectionRegistrationPageViewModel>();
         }
 
         [Conditional("IOS")]
