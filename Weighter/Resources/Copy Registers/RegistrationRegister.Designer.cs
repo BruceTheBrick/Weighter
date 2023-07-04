@@ -85,5 +85,50 @@ namespace Weighter.Resources.Copy_Registers {
                 return ResourceManager.GetString("REG_003", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First name.
+        /// </summary>
+        internal static string REG_004 {
+            get {
+                return ResourceManager.GetString("REG_004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        internal static string REG_005 {
+            get {
+                return ResourceManager.GetString("REG_005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date of birth.
+        /// </summary>
+        internal static string REG_006 {
+            get {
+                return ResourceManager.GetString("REG_006", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tell us about you.
+        /// </summary>
+        internal static string REG_007 {
+            get {
+                return ResourceManager.GetString("REG_007", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Let us get to know you by providing us with the following details .
+        /// </summary>
+        internal static string REG_008 {
+            get {
+                return ResourceManager.GetString("REG_008", resourceCulture);
+            }
+        }
     }
 }

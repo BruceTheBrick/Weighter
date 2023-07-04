@@ -76,5 +76,32 @@ namespace Weighter.Resources.Copy_Registers {
                 return ResourceManager.GetString("GLOBAL_002", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string GLOBAL_003 {
+            get {
+                return ResourceManager.GetString("GLOBAL_003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string GLOBAL_004 {
+            get {
+                return ResourceManager.GetString("GLOBAL_004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        internal static string GLOBAL_005 {
+            get {
+                return ResourceManager.GetString("GLOBAL_005", resourceCulture);
+            }
+        }
     }
 }

@@ -42,7 +42,10 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.2.0" />
+        <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.0" />
         <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.0" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
@@ -113,5 +116,11 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>GlobalRegister.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Reference Include="CommunityToolkit.Maui">
+        <HintPath>..\..\..\.nuget\packages\communitytoolkit.maui\5.2.0\lib\net7.0\CommunityToolkit.Maui.dll</HintPath>
+      </Reference>
     </ItemGroup>
 </Project>

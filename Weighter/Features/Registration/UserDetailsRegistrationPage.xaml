@@ -6,15 +6,33 @@
     xmlns:copyRegisters="clr-namespace:Weighter.Resources.Copy_Registers"
     xmlns:features="clr-namespace:Weighter.Features"
     xmlns:registration="clr-namespace:Weighter.Features.Registration"
+    xmlns:ui="clr-namespace:Weighter.UI"
     x:DataType="registration:UserDetailsRegistrationPageViewModel">
-    <StackLayout>
-        <Grid>
-            <Entry />
-        </Grid>
-        <Button
-            Margin="16"
-            Command="{Binding NextCommand}"
-            Text="{x:Static copyRegisters:GlobalRegister.GLOBAL_002}"
-            VerticalOptions="End" />
-    </StackLayout>
+    <Grid RowDefinitions="auto, *">
+        <ui:NavigationBar Title="User Details" />
+        <ScrollView Grid.Row="1" Margin="16">
+            <StackLayout Spacing="24">
+
+                <StackLayout>
+                    <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_007}" />
+                    <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_008}" />
+                </StackLayout>
+
+                <!--  First name  -->
+                <Entry Placeholder="{x:Static copyRegisters:RegistrationRegister.REG_004}" Text="{Binding RegistrationDetails.User.FirstName}" />
+
+                <!--  Last name  -->
+                <Entry Placeholder="{x:Static copyRegisters:RegistrationRegister.REG_005}" Text="{Binding RegistrationDetails.User.LastName}" />
+
+                <!--  Date of birth  -->
+                <DatePicker Date="{Binding RegistrationDetails.User.DateOfBirth}" />
+
+                <Button
+                    Margin="16"
+                    Command="{Binding NextCommand}"
+                    Text="{x:Static copyRegisters:GlobalRegister.GLOBAL_002}"
+                    VerticalOptions="End" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </features:BasePage>

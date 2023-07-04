@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Markup;
 using Microsoft.Extensions.Logging;
 
 namespace Weighter
@@ -12,6 +13,7 @@ namespace Weighter
             builder
                 .UsePrismApp<App>(PrismStartup.Configure)
                 .UseMauiCommunityToolkit()
+                .UseMauiCommunityToolkitMarkup()
                 .ConfigureFonts(ConfigureFonts);
 
             EnableDebug(builder);

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+    x:Class="Weighter.UI.NavigationBar"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:Weighter.UI.Components"
+    xmlns:converters="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Name="This"
+    ColumnDefinitions="*, 8*, *">
+    <Grid.Resources>
+        <converters:IsStringNotNullOrWhiteSpaceConverter x:Key="IsStringNotNullOrWhiteSpaceConverter" />
+    </Grid.Resources>
+
+    <!--  Left Action  -->
+    <ContentView
+        Grid.Column="0"
+        Padding="16"
+        AutomationProperties.IsInAccessibleTree="{Binding LeftAccessibilityName, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}, Source={x:Reference This}}"
+        SemanticProperties.Description="{Binding LeftAccessibilityName, Source={x:Reference This}}">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <components:TintedImage AutomationProperties.IsInAccessibleTree="False" Source="{Binding LeftIconSource, Source={x:Reference This}}" />
+            <Label AutomationProperties.IsInAccessibleTree="False" Text="{Binding LeftText, Source={x:Reference This}}" />
+        </StackLayout>
+        <ContentView.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding LeftCommand, Source={x:Reference This}}" />
+        </ContentView.GestureRecognizers>
+    </ContentView>
+
+    <!--  Title  -->
+    <ContentView
+        Grid.Column="1"
+        Padding="16"
+        SemanticProperties.Description="{Binding Title, Source={x:Reference This}}"
+        SemanticProperties.HeadingLevel="Level1">
+        <Label
+            AutomationProperties.IsInAccessibleTree="False"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Title, Source={x:Reference This}}" />
+    </ContentView>
+
+    <!--  Right Action  -->
+    <ContentView
+        Grid.Column="2"
+        Padding="16"
+        SemanticProperties.Description="{Binding RightAccessibilityName, Source={x:Reference This}}">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <components:TintedImage AutomationProperties.IsInAccessibleTree="False" Source="{Binding RightIconSource, Source={x:Reference This}}" />
+            <Label AutomationProperties.IsInAccessibleTree="False" Text="{Binding RightText, Source={x:Reference This}}" />
+        </StackLayout>
+        <ContentView.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding RightCommand, Source={x:Reference This}}" />
+        </ContentView.GestureRecognizers>
+    </ContentView>
+</Grid>

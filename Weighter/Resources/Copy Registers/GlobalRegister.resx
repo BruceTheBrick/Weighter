@@ -24,4 +24,13 @@
     <data name="GLOBAL_002" xml:space="preserve">
         <value>Next</value>
     </data>
+    <data name="GLOBAL_003" xml:space="preserve">
+        <value>Close</value>
+    </data>
+    <data name="GLOBAL_004" xml:space="preserve">
+        <value>Back</value>
+    </data>
+    <data name="GLOBAL_005" xml:space="preserve">
+        <value>Done</value>
+    </data>
 </root>
