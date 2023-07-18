@@ -3,9 +3,9 @@ using Weighter.Core.Services.Interfaces;
 
 namespace Weighter.Features.Registration
 {
-    public class WelcomePageViewModel : BasePageViewModel
+    public class RegistrationWelcomePageViewModel : BasePageViewModel
     {
-        public WelcomePageViewModel(IBaseService baseService)
+        public RegistrationWelcomePageViewModel(IBaseService baseService)
             : base(baseService)
         {
             ContinueCommand = new AsyncRelayCommand(Continue);
@@ -15,7 +15,7 @@ namespace Weighter.Features.Registration
 
         private async Task Continue()
         {
-            var t = NavigationService.NavigateAsync(nameof(UserDetailsRegistrationPage));
+            var t = NavigationService.NavigateAsync(nameof(RegistrationUserDetailsPage));
         }
     }
 }

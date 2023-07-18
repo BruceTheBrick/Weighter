@@ -56,7 +56,7 @@ namespace Weighter.Features.Init
 
         private Task NavigateToRegistration()
         {
-            return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(WelcomePage)}");
+            return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(RegistrationWelcomePage)}");
         }
     }
 }

@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Weighter.Tests.Features.Registration
 {
-    public class UserDetailsRegistrationPageViewModelTests : UnitTestBase<UserDetailsRegistrationPageViewModel>
+    public class UserDetailsRegistrationPageViewModelTests : UnitTestBase<RegistrationUserDetailsPageViewModel>
     {
         #region OnNavigatedTo
 

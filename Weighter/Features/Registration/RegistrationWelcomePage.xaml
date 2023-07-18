@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Weighter.Features.Registration.WelcomePage"
+    x:Class="Weighter.Features.Registration.RegistrationWelcomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:copyRegisters="clr-namespace:Weighter.Resources.Copy_Registers"
     xmlns:registration="clr-namespace:Weighter.Features.Registration"
-    x:DataType="registration:WelcomePageViewModel">
+    x:DataType="registration:RegistrationWelcomePageViewModel">
     <Grid Padding="16">
         <StackLayout VerticalOptions="Center">
             <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_001}" />

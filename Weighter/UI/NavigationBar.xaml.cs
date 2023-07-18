@@ -73,7 +73,7 @@ namespace Weighter.UI
 
         public string LeftIconSource { get; set; }
         public string LeftText { get; set; }
-        public string LeftAccessibilityName { get; set; }
+        public string LeftAccessibilityName { get; set; } = string.Empty;
         public string RightIconSource { get; set; }
         public string RightText { get; set; }
         public string RightAccessibilityName { get; set; }

@@ -85,6 +85,10 @@
           <AutoGen>True</AutoGen>
           <DependentUpon>GlobalRegister.resx</DependentUpon>
         </Compile>
+        <Compile Update="Features\Registration\RegistrationWelcomePage.xaml.cs">
+          <DependentUpon>WelcomePage.xaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
     </ItemGroup>
 
     <!-- IOS-->
@@ -122,5 +126,11 @@
       <Reference Include="CommunityToolkit.Maui">
         <HintPath>..\..\..\.nuget\packages\communitytoolkit.maui\5.2.0\lib\net7.0\CommunityToolkit.Maui.dll</HintPath>
       </Reference>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <MauiXaml Update="Features\Registration\RegistrationWelcomePage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
     </ItemGroup>
 </Project>

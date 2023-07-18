@@ -4,9 +4,9 @@ using Weighter.Features.Registration.ViewModels;
 
 namespace Weighter.Features.Registration
 {
-    public class UserDetailsRegistrationPageViewModel : BasePageViewModel
+    public class RegistrationUserDetailsPageViewModel : BasePageViewModel
     {
-        public UserDetailsRegistrationPageViewModel(IBaseService baseService)
+        public RegistrationUserDetailsPageViewModel(IBaseService baseService)
             : base(baseService)
         {
             NextCommand = new AsyncRelayCommand(Next);
@@ -27,7 +27,7 @@ namespace Weighter.Features.Registration
         private Task Next()
         {
             var parameters = new NavigationParameters { { Core.Services.NavigationService.RegistrationDetails, RegistrationDetails }, };
-            return NavigationService.NavigateAsync(nameof(ThemeSelectionRegistrationPage), parameters);
+            return NavigationService.NavigateAsync(nameof(RegistrationThemeSelectionPage), parameters);
         }
     }
 }

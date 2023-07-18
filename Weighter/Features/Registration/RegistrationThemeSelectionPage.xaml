@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <features:BasePage
-    x:Class="Weighter.Features.Registration.ThemeSelectionRegistrationPage"
+    x:Class="Weighter.Features.Registration.RegistrationThemeSelectionPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:components="clr-namespace:Weighter.UI.Components"
     xmlns:features="clr-namespace:Weighter.Features"
     xmlns:registration="clr-namespace:Weighter.Features.Registration"
-    x:DataType="registration:ThemeSelectionRegistrationPageViewModel">
+    x:DataType="registration:RegistrationThemeSelectionPageViewModel">
     <StackLayout>
         <components:TintedImage
             Source="{AppThemeBinding Dark='ic_moon',

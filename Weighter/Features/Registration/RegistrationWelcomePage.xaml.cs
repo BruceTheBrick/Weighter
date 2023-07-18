@@ -1,11 +1,11 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Weighter.Features.Registration
 {
     [ExcludeFromCodeCoverage]
-    public partial class UserDetailsRegistrationPage
+    public partial class RegistrationWelcomePage
     {
-        public UserDetailsRegistrationPage()
+        public RegistrationWelcomePage()
         {
             InitializeComponent();
         }

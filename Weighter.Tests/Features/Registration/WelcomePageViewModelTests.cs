@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Weighter.Tests.Features.Registration
 {
-    public class WelcomePageViewModelTests : UnitTestBase<WelcomePageViewModel>
+    public class WelcomePageViewModelTests : UnitTestBase<RegistrationWelcomePageViewModel>
     {
         #region ContinueCommand
 
@@ -18,7 +18,7 @@ namespace Weighter.Tests.Features.Registration
             await Sut.ContinueCommand.ExecuteAsync(null);
 
             //Assert
-            Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync(nameof(UserDetailsRegistrationPage)));
+            Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync(nameof(RegistrationUserDetailsPage)));
         }
 
         #endregion

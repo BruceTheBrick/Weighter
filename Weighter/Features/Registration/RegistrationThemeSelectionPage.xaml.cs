@@ -3,9 +3,9 @@
 namespace Weighter.Features.Registration
 {
     [ExcludeFromCodeCoverage]
-    public partial class ThemeSelectionRegistrationPage
+    public partial class RegistrationThemeSelectionPage
     {
-        public ThemeSelectionRegistrationPage()
+        public RegistrationThemeSelectionPage()
         {
             InitializeComponent();
         }

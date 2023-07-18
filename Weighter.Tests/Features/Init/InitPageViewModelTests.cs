@@ -48,7 +48,7 @@ namespace Weighter.Tests.Features.Init
             await Sut.OnNavigatedToAsync(new NavigationParameters());
 
             //Assert
-            Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(WelcomePage)}"));
+            Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(RegistrationWelcomePage)}"));
         }
 
         [Fact]

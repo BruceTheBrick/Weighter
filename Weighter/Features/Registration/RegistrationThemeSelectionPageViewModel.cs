@@ -3,12 +3,12 @@ using Weighter.Features.Registration.ViewModels;
 
 namespace Weighter.Features.Registration
 {
-    public class ThemeSelectionRegistrationPageViewModel : BasePageViewModel
+    public class RegistrationThemeSelectionPageViewModel : BasePageViewModel
     {
         private readonly IThemeService _themeService;
         private bool _isDarkModeEnabled;
 
-        public ThemeSelectionRegistrationPageViewModel(
+        public RegistrationThemeSelectionPageViewModel(
             IThemeService themeService,
             IBaseService baseService)
             : base(baseService)

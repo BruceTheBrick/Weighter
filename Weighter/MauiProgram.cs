@@ -12,7 +12,7 @@ namespace Weighter
             var builder = MauiApp.CreateBuilder();
             builder
                 .UsePrismApp<App>(PrismStartup.Configure)
-                .UseMauiCommunityToolkit()
+                .UseMauiCommunityToolkit(ConfigureCommunityToolkit)
                 .UseMauiCommunityToolkitMarkup()
                 .ConfigureFonts(ConfigureFonts);
 
@@ -30,6 +30,11 @@ namespace Weighter
         private static void EnableDebug(MauiAppBuilder builder)
         {
             builder.Logging.AddDebug();
+        }
+
+        private static void ConfigureCommunityToolkit(Options options)
+        {
+            options.SetShouldSuppressExceptionsInConverters(true);
         }
     }
 }

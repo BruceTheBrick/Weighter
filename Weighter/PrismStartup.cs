@@ -64,12 +64,12 @@ namespace Weighter
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<InitPage, InitPageViewModel>();
-            containerRegistry.RegisterForNavigation<WelcomePage, WelcomePageViewModel>();
+            containerRegistry.RegisterForNavigation<RegistrationWelcomePage, RegistrationWelcomePageViewModel>();
             containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
             containerRegistry.RegisterForNavigation<WeightSummaryPage, WeightSummaryPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
-            containerRegistry.RegisterForNavigation<UserDetailsRegistrationPage, UserDetailsRegistrationPageViewModel>();
-            containerRegistry.RegisterForNavigation<ThemeSelectionRegistrationPage, ThemeSelectionRegistrationPageViewModel>();
+            containerRegistry.RegisterForNavigation<RegistrationUserDetailsPage, RegistrationUserDetailsPageViewModel>();
+            containerRegistry.RegisterForNavigation<RegistrationThemeSelectionPage, RegistrationThemeSelectionPageViewModel>();
         }
 
         [Conditional("IOS")]
