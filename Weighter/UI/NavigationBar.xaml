@@ -40,6 +40,7 @@
     <ContentView
         Grid.Column="2"
         Padding="16"
+        AutomationProperties.IsInAccessibleTree="{Binding RightAccessibilityName, Converter={converters:IsStringNotNullOrWhiteSpaceConverter}, Source={x:Reference This}}"
         SemanticProperties.Description="{Binding RightAccessibilityName, Source={x:Reference This}}">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <components:TintedImage AutomationProperties.IsInAccessibleTree="False" Source="{Binding RightIconSource, Source={x:Reference This}}" />
