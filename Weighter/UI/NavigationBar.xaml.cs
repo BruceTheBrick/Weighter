@@ -73,10 +73,12 @@ namespace Weighter.UI
 
         public string LeftIconSource { get; set; }
         public string LeftText { get; set; }
-        public string LeftAccessibilityName { get; set; } = string.Empty;
+        public string LeftAccessibilityName { get; set; }
+        public bool IsLeftActionInAccessibleTree { get; set; }
         public string RightIconSource { get; set; }
         public string RightText { get; set; }
         public string RightAccessibilityName { get; set; }
+        public bool IsRightActionInAccessibleTree { get; set; }
 
         private static void LeftActionTypeChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
@@ -105,6 +107,7 @@ namespace Weighter.UI
             LeftIconSource = configuration.IconSource;
             LeftText = configuration.Text;
             LeftAccessibilityName = configuration.AccessibilityName;
+            IsLeftActionInAccessibleTree = configuration.IsInAccessibleTree;
         }
 
         private void SetRightAction(NavigationBarConfiguration configuration)
@@ -112,6 +115,7 @@ namespace Weighter.UI
             RightIconSource = configuration.IconSource;
             RightText = configuration.Text;
             RightAccessibilityName = configuration.AccessibilityName;
+            IsRightActionInAccessibleTree = configuration.IsInAccessibleTree;
         }
     }
 }

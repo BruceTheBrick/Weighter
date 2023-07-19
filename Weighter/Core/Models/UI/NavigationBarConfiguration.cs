@@ -2,8 +2,21 @@
 {
     public class NavigationBarConfiguration
     {
-        public string IconSource { get; set; }
-        public string Text { get; set; }
-        public string AccessibilityName { get; set; }
+        public NavigationBarConfiguration()
+        {
+        }
+
+        public NavigationBarConfiguration(string iconSource, string text, string accessibilityName, bool isInAccessibleTree)
+        {
+            IconSource = iconSource;
+            Text = text;
+            AccessibilityName = accessibilityName;
+            IsInAccessibleTree = isInAccessibleTree;
+        }
+
+        public string IconSource { get; }
+        public string Text { get; }
+        public string AccessibilityName { get; }
+        public bool IsInAccessibleTree { get; }
     }
 }

@@ -4,7 +4,6 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:components="clr-namespace:Weighter.UI.Components"
-    xmlns:converters="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Name="This"
     ColumnDefinitions="*, 8*, *">
 
@@ -12,7 +11,7 @@
     <ContentView
         Grid.Column="0"
         Padding="16"
-        AutomationProperties.IsInAccessibleTree="{Binding LeftAccessibilityName, Converter={converters:IsStringNotNullOrWhiteSpaceConverter}, Source={x:Reference This}}"
+        AutomationProperties.IsInAccessibleTree="{Binding IsLeftActionInAccessibleTree, Source={x:Reference This}}"
         SemanticProperties.Description="{Binding LeftAccessibilityName, Source={x:Reference This}}">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <components:TintedImage AutomationProperties.IsInAccessibleTree="False" Source="{Binding LeftIconSource, Source={x:Reference This}}" />
@@ -40,7 +39,7 @@
     <ContentView
         Grid.Column="2"
         Padding="16"
-        AutomationProperties.IsInAccessibleTree="{Binding RightAccessibilityName, Converter={converters:IsStringNotNullOrWhiteSpaceConverter}, Source={x:Reference This}}"
+        AutomationProperties.IsInAccessibleTree="{Binding IsRightActionInAccessibleTree, Source={x:Reference This}}"
         SemanticProperties.Description="{Binding RightAccessibilityName, Source={x:Reference This}}">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <components:TintedImage AutomationProperties.IsInAccessibleTree="False" Source="{Binding RightIconSource, Source={x:Reference This}}" />

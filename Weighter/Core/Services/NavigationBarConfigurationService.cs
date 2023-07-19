@@ -36,42 +36,47 @@ namespace Weighter.Core.Services
 
         private static NavigationBarConfiguration Close()
         {
-            return new NavigationBarConfiguration
-            {
-                IconSource = "ic_close", AccessibilityName = GlobalRegister.GLOBAL_003, Text = string.Empty,
-            };
+            return new NavigationBarConfiguration(
+                "ic_close",
+                GlobalRegister.GLOBAL_003,
+                string.Empty,
+                true);
         }
 
         private static NavigationBarConfiguration Back()
         {
-            return new NavigationBarConfiguration
-            {
-                IconSource = "ic_left_arrow", AccessibilityName = GlobalRegister.GLOBAL_004, Text = string.Empty,
-            };
+            return new NavigationBarConfiguration(
+                "ic_left_arrow",
+                GlobalRegister.GLOBAL_004,
+                string.Empty,
+                true);
         }
 
         private static NavigationBarConfiguration Next()
         {
-            return new NavigationBarConfiguration
-            {
-                IconSource = "ic_right_arrow", AccessibilityName = GlobalRegister.GLOBAL_002, Text = string.Empty,
-            };
+            return new NavigationBarConfiguration(
+                "ic_right_arrow",
+                GlobalRegister.GLOBAL_002,
+                string.Empty,
+                true);
         }
 
         private static NavigationBarConfiguration Done()
         {
-            return new NavigationBarConfiguration
-            {
-                IconSource = string.Empty, AccessibilityName = GlobalRegister.GLOBAL_005, Text = GlobalRegister.GLOBAL_005,
-            };
+            return new NavigationBarConfiguration(
+                string.Empty,
+                GlobalRegister.GLOBAL_005,
+                GlobalRegister.GLOBAL_005,
+                true);
         }
 
         private static NavigationBarConfiguration None()
         {
-            return new NavigationBarConfiguration
-            {
-                IconSource = string.Empty, AccessibilityName = string.Empty, Text = string.Empty,
-            };
+            return new NavigationBarConfiguration(
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                false);
         }
     }
 }
