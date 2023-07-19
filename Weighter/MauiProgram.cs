@@ -14,7 +14,8 @@ namespace Weighter
                 .UsePrismApp<App>(PrismStartup.Configure)
                 .UseMauiCommunityToolkit(ConfigureCommunityToolkit)
                 .UseMauiCommunityToolkitMarkup()
-                .ConfigureFonts(ConfigureFonts);
+                .ConfigureFonts(ConfigureFonts)
+                .ConfigureEssentials(AppActionManager.ConfigureEssentials);
 
             EnableDebug(builder);
             return builder.Build();
