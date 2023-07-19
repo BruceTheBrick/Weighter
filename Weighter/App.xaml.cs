@@ -11,6 +11,7 @@ namespace Weighter
             InitializeComponent();
 
             _themeService = themeService;
+            _themeService.Theme = Current.UserAppTheme;
             _themeService.PropertyChanged += OnThemeChanged;
         }
 

@@ -9,6 +9,7 @@
     x:DataType="registration:RegistrationThemeSelectionPageViewModel">
     <StackLayout>
         <components:TintedImage
+            HeightRequest="60"
             Source="{AppThemeBinding Dark='ic_moon',
                                      Light='ic_sun'}"
             TintColor="{AppThemeBinding Dark='White',

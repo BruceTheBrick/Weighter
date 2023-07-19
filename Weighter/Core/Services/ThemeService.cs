@@ -7,12 +7,6 @@ namespace Weighter.Core.Services
     public class ThemeService : IThemeService, INotifyPropertyChanged
     {
         private AppTheme _theme;
-
-        public ThemeService()
-        {
-            Theme = AppTheme.Dark;
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         public AppTheme Theme
