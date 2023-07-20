@@ -1,4 +1,4 @@
-using Weighter.Features.Registration;
+using Weighter.Features.WeightTracking;
 
 namespace Weighter
 {
@@ -6,19 +6,27 @@ namespace Weighter
     {
         public static void ConfigureEssentials(IEssentialsBuilder essentialsBuilder)
         {
-            essentialsBuilder.AddAppAction("test_icon", "Testing actions", "This is my test action");
+            CreateAppActions(essentialsBuilder);
             essentialsBuilder.OnAppAction(AppActionInvoked);
+        }
+
+        private static void CreateAppActions(IEssentialsBuilder essentialsBuilder)
+        {
+            if (!AppActions.Current.IsSupported)
+            {
+                return;
+            }
+
+            essentialsBuilder.AddAppAction("test_icon", "Testing actions", "This is my test action");
         }
 
         private static async void AppActionInvoked(AppAction appAction)
         {
-            var page = new Page();
+            var page = string.Empty;
             if (appAction.Id == "test_icon")
             {
-                page = new RegistrationUserDetailsPage();
+                page = $"/{nameof(NavigationPage)}/{nameof(WeightSummaryPage)}";
             }
-
-            await Application.Current.MainPage.Navigation.PushAsync(page);
         }
     }
 }
