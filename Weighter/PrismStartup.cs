@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using Weighter.Core.Databases;
+using Weighter.Core.Databases.Interfaces;
 using Weighter.Core.DataLayers;
 using Weighter.Core.DataLayers.Interfaces;
 using Weighter.Core.Services;
@@ -47,12 +49,12 @@ namespace Weighter
         private static void RegisterDataLayers(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IUserDataLayer, UserDataLayer>();
-            containerRegistry.Register<IWeighterDataLayer, WeighterDataLayer>();
             containerRegistry.Register<IWeighterDatabase, WeighterDatabase>();
         }
 
         private static void RegisterDatabaseServices(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IWeighterDataLayer, WeighterDataLayer>();
         }
 
         private static void RegisterSingletons(IContainerRegistry containerRegistry)

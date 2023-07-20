@@ -1,4 +1,4 @@
-﻿using Weighter.Core.DataLayers.Interfaces;
+﻿using Weighter.Core.Databases.Interfaces;
 using Weighter.Core.Services.Interfaces;
 
 namespace Weighter.Core.Services

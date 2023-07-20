@@ -1,4 +1,4 @@
-﻿namespace Weighter.Core.DataLayers.Interfaces
+﻿namespace Weighter.Core.Databases.Interfaces
 {
     public interface IWeighterDatabase
     {

@@ -1,9 +1,9 @@
 ﻿using Weighter.Core.Constants;
-using Weighter.Core.DataLayers.Interfaces;
+using Weighter.Core.Databases.Interfaces;
 using Weighter.Core.Models.Database;
 using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Core.DataLayers
+namespace Weighter.Core.Databases
 {
     public class WeighterDatabase : IWeighterDatabase
     {
