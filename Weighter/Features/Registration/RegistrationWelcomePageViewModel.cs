@@ -13,9 +13,9 @@ namespace Weighter.Features.Registration
 
         public IAsyncRelayCommand ContinueCommand { get; }
 
-        private async Task Continue()
+        private Task Continue()
         {
-            var t = NavigationService.NavigateAsync(nameof(RegistrationUserDetailsPage));
+            return NavigationService.NavigateAsync(nameof(RegistrationUserDetailsPage));
         }
     }
 }

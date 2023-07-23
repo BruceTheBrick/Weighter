@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Weighter.Tests.Features.Registration
 {
-    public class WelcomePageViewModelTests : UnitTestBase<RegistrationWelcomePageViewModel>
+    public class RegistrationWelcomePageViewModelTests : UnitTestBase<RegistrationWelcomePageViewModel>
     {
         #region ContinueCommand
 
