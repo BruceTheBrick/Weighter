@@ -21,21 +21,21 @@ namespace Weighter.Resources.Copy_Registers {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class GlobalRegister {
+    public class GlobalRegister {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal GlobalRegister() {
+        public GlobalRegister() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Weighter.Resources.Copy_Registers.GlobalRegister", typeof(GlobalRegister).Assembly);
@@ -50,7 +50,7 @@ namespace Weighter.Resources.Copy_Registers {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace Weighter.Resources.Copy_Registers {
         /// <summary>
         ///   Looks up a localized string similar to Continue.
         /// </summary>
-        internal static string GLOBAL_001 {
+        public static string GLOBAL_001 {
             get {
                 return ResourceManager.GetString("GLOBAL_001", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace Weighter.Resources.Copy_Registers {
         /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
-        internal static string GLOBAL_002 {
+        public static string GLOBAL_002 {
             get {
                 return ResourceManager.GetString("GLOBAL_002", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace Weighter.Resources.Copy_Registers {
         /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
-        internal static string GLOBAL_003 {
+        public static string GLOBAL_003 {
             get {
                 return ResourceManager.GetString("GLOBAL_003", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace Weighter.Resources.Copy_Registers {
         /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
-        internal static string GLOBAL_004 {
+        public static string GLOBAL_004 {
             get {
                 return ResourceManager.GetString("GLOBAL_004", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace Weighter.Resources.Copy_Registers {
         /// <summary>
         ///   Looks up a localized string similar to Done.
         /// </summary>
-        internal static string GLOBAL_005 {
+        public static string GLOBAL_005 {
             get {
                 return ResourceManager.GetString("GLOBAL_005", resourceCulture);
             }

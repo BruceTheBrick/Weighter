@@ -11,6 +11,7 @@ namespace Weighter.Core.Services
         {
             _navigationService = navigationService;
         }
+
         public Task<INavigationResult> NavigateAsync(string uri)
         {
             return _navigationService.NavigateAsync(uri);

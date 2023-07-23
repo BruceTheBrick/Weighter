@@ -1,7 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
 using Weighter.Core.Services.Interfaces;
 
 namespace Weighter.Core.Services
 {
+    [ExcludeFromCodeCoverage]
     public class TaskDelayService : ITaskDelayService
     {
         private readonly IDeviceInfo _deviceInfo;

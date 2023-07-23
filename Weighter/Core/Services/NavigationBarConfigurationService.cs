@@ -1,4 +1,5 @@
-﻿using Weighter.Core.Enums;
+﻿using System.Diagnostics.CodeAnalysis;
+using Weighter.Core.Enums;
 using Weighter.Core.Models.UI;
 using Weighter.Core.Services.Interfaces;
 using Weighter.Resources.Copy_Registers;
@@ -29,6 +30,7 @@ namespace Weighter.Core.Services
             }
         }
 
+        [ExcludeFromCodeCoverage]
         public NavigationBarConfiguration GetConfiguration(NavigationBarActionType actionType)
         {
             return Configuration(actionType);
@@ -39,7 +41,7 @@ namespace Weighter.Core.Services
             return new NavigationBarConfiguration(
                 "ic_close",
                 GlobalRegister.GLOBAL_003,
-                string.Empty,
+                GlobalRegister.GLOBAL_003,
                 true);
         }
 
@@ -48,7 +50,7 @@ namespace Weighter.Core.Services
             return new NavigationBarConfiguration(
                 "ic_left_arrow",
                 GlobalRegister.GLOBAL_004,
-                string.Empty,
+                GlobalRegister.GLOBAL_004,
                 true);
         }
 
@@ -57,7 +59,7 @@ namespace Weighter.Core.Services
             return new NavigationBarConfiguration(
                 "ic_right_arrow",
                 GlobalRegister.GLOBAL_002,
-                string.Empty,
+                GlobalRegister.GLOBAL_002,
                 true);
         }
 
