@@ -8,7 +8,6 @@ namespace Weighter.Core.Services
     {
         private AppTheme _theme;
         public event PropertyChangedEventHandler PropertyChanged;
-
         public AppTheme Theme
         {
             get => _theme;
@@ -23,6 +22,9 @@ namespace Weighter.Core.Services
                 OnPropertyChanged();
             }
         }
+
+        public bool IsDarkMode => Theme == AppTheme.Dark;
+        public bool IsLightMode => Theme == AppTheme.Light;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
