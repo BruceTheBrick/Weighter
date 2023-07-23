@@ -9,18 +9,15 @@ namespace Weighter.Features.Init
     {
         private readonly IAppInitializationService _appInitializationService;
         private readonly IUserDataLayer _userDataLayer;
-        private readonly ITaskDelayService _taskDelayService;
 
         public InitPageViewModel(
             IAppInitializationService appInitializationService,
             IUserDataLayer userDataLayer,
-            ITaskDelayService taskDelayService,
             IBaseService baseService)
             : base(baseService)
         {
             _appInitializationService = appInitializationService;
             _userDataLayer = userDataLayer;
-            _taskDelayService = taskDelayService;
         }
 
         public override async Task OnNavigatedToAsync(INavigationParameters parameters)
@@ -39,7 +36,6 @@ namespace Weighter.Features.Init
 
         private async Task StartApp()
         {
-            await _taskDelayService.Delay(3000);
             if (_userDataLayer.AnyUsersRegistered())
             {
                 await NavigateToLoginPage();
