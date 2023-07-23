@@ -6,7 +6,6 @@ namespace Weighter.Features.Registration
     public class RegistrationThemeSelectionPageViewModel : BasePageViewModel
     {
         private readonly IThemeService _themeService;
-        private bool _isDarkModeEnabled;
 
         public RegistrationThemeSelectionPageViewModel(
             IThemeService themeService,
@@ -19,27 +18,20 @@ namespace Weighter.Features.Registration
         public RegistrationDetailsViewModel RegistrationDetails { get; set; }
         public bool IsDarkModeEnabled
         {
-            get => _isDarkModeEnabled;
-            set
-            {
-                _isDarkModeEnabled = value;
-                UpdateTheme();
-            }
+            get => _themeService.IsDarkMode;
+            set => UpdateTheme(value);
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
-            if (parameters.TryGetValue<RegistrationDetailsViewModel>(
-                    Core.Services.NavigationService.RegistrationDetails, out var details))
-            {
-                RegistrationDetails = details;
-            }
+            RegistrationDetails =
+                parameters.GetValue<RegistrationDetailsViewModel>(Core.Services.NavigationService.RegistrationDetails);
         }
 
-        private void UpdateTheme()
+        private void UpdateTheme(bool isDarkModeEnabled)
         {
-            var theme = IsDarkModeEnabled ? AppTheme.Dark : AppTheme.Light;
+            var theme = isDarkModeEnabled ? AppTheme.Dark : AppTheme.Light;
             _themeService.Theme = theme;
             RegistrationDetails.Settings.AppTheme = theme;
         }
