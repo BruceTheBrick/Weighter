@@ -15,7 +15,7 @@ namespace Weighter.Tests.Factories
         {
             return new Faker<UserSettingsModel>()
                 .RuleFor(x => x.Id, f => f.IndexFaker)
-                .RuleFor(x => x.AppTheme, f => f.PickRandomParam<AppTheme>())
+                .RuleFor(x => x.AppTheme, f => f.PickRandom<AppTheme>())
                 .RuleFor(x => x.UserId, f => f.Random.Int(1))
                 .Generate(count);
         }

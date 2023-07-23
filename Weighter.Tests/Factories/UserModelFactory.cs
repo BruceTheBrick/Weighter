@@ -15,7 +15,7 @@ namespace Weighter.Tests.Factories
         {
             return new Faker<UserModel>()
                 .RuleFor(x => x.Id, f => f.IndexFaker)
-                .RuleFor(x => x.Gender, f => f.PickRandomParam<Gender>())
+                .RuleFor(x => x.Gender, f => f.PickRandom<Gender>())
                 .RuleFor(x => x.Nickname, f => f.Person.UserName)
                 .RuleFor(x => x.LastName, f => f.Person.LastName)
                 .RuleFor(x => x.FirstName, f => f.Person.FirstName)
