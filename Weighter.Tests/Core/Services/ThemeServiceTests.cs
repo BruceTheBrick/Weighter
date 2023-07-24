@@ -1,10 +1,9 @@
 ﻿using FluentAssertions;
-using Microsoft.Maui.ApplicationModel;
 using Weighter.Core.Services;
 using Weighter.Tests.Base;
 using Xunit;
 
-namespace Weighter.Tests.Services
+namespace Weighter.Tests.Core.Services
 {
     public class ThemeServiceTests : UnitTestBase<ThemeService>
     {

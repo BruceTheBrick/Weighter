@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Registration.ViewModels;
+using Weighter.Features.Registration._ViewModels;
 
 namespace Weighter.Features.Registration
 {

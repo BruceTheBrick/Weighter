@@ -20,4 +20,16 @@ namespace Weighter.Tests.Base
         public AutoMocker Mocker { get; }
         public Faker Faker { get; }
     }
+    
+    public class UnitTestBase
+    {
+        public UnitTestBase()
+        {
+            Faker = new Faker();
+            Mocker = new AutoMocker(MockBehavior.Default, DefaultValue.Mock);
+        }
+        
+        public AutoMocker Mocker { get; }
+        public Faker Faker { get; }
+    }
 }

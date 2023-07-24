@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using Weighter.Features.Registration.ViewModels;
+using Weighter.Features.Registration._ViewModels;
 
 namespace Weighter.Tests.Factories
 {

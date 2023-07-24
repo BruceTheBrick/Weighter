@@ -1,8 +1,11 @@
 ﻿using FluentAssertions;
+using Moq;
+using Weighter.Core.DataLayers.Interfaces;
 using Weighter.Core.Services;
 using Weighter.Core.Services.Interfaces;
+using Weighter.Features.Dashboard;
 using Weighter.Features.Registration;
-using Weighter.Features.Registration.ViewModels;
+using Weighter.Features.Registration._ViewModels;
 using Weighter.Tests.Base;
 using Weighter.Tests.Factories;
 using Xunit;
@@ -83,6 +86,37 @@ namespace Weighter.Tests.Features.Registration
 
             //Assert
             Sut.RegistrationDetails.Settings.AppTheme.Should().Be(AppTheme.Light);
+        }
+
+        #endregion
+
+        #region ContinueCommand
+
+        [Fact]
+        public async Task ContinueCommand_ShouldNavigateToDashboard_WhenRegistrationIsSuccessful()
+        {
+            //Arrange
+            Sut.RegistrationDetails = RegistrationDetailsFactory.GetViewModel();
+            Mocker.GetMock<IRegistrationDataLayer>().Setup(x => x.Register(Sut.RegistrationDetails)).Returns(true);
+
+            //Act
+            await Sut.ContinueCommand.ExecuteAsync(null);
+
+            //Assert
+            Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(DashboardPage)}"));
+        }
+
+        [Fact]
+        public async Task ContinueCommand_ShouldNotNavigate_WhenRegistrationIsUnsuccessful()
+        {
+            //Arrange
+            Mocker.GetMock<IRegistrationDataLayer>().Setup(x => x.Register(It.IsAny<RegistrationDetailsViewModel>())).Returns(false);
+
+            //Act
+            await Sut.ContinueCommand.ExecuteAsync(null);
+
+            //Assert
+            Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(DashboardPage)}"), Times.Never);
         }
 
         #endregion

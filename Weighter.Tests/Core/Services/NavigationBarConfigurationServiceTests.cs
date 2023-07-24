@@ -5,7 +5,7 @@ using Weighter.Resources.Copy_Registers;
 using Weighter.Tests.Base;
 using Xunit;
 
-namespace Weighter.Tests.Services
+namespace Weighter.Tests.Core.Services
 {
     public class NavigationBarConfigurationServiceTests : UnitTestBase<NavigationBarConfigurationService>
     {

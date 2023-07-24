@@ -49,12 +49,12 @@ namespace Weighter
         private static void RegisterDataLayers(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IUserDataLayer, UserDataLayer>();
-            containerRegistry.Register<IWeighterDatabase, WeighterDatabase>();
+            containerRegistry.Register<IRegistrationDataLayer, RegistrationDataLayer>();
         }
 
         private static void RegisterDatabaseServices(IContainerRegistry containerRegistry)
         {
-            containerRegistry.Register<IWeighterDataLayer, WeighterDataLayer>();
+            containerRegistry.Register<IWeighterDatabase, WeighterDatabase>();
         }
 
         private static void RegisterSingletons(IContainerRegistry containerRegistry)
