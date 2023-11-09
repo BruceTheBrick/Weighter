@@ -1,8 +1,7 @@
-namespace Weighter.Core.Enums
+namespace Weighter.Core.Enums;
+
+public enum Gender
 {
-    public enum Gender
-    {
-        Male,
-        Female,
-    }
+    Male,
+    Female,
 }

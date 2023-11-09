@@ -1,13 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Features
+namespace Weighter.Features;
+
+[ExcludeFromCodeCoverage]
+public partial class BasePage
 {
-    [ExcludeFromCodeCoverage]
-    public partial class BasePage
+    public BasePage()
     {
-        public BasePage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

@@ -1,10 +1,9 @@
 ﻿using Weighter.Core.Enums;
 using Weighter.Core.Models.UI;
 
-namespace Weighter.Core.Services.Interfaces
+namespace Weighter.Core.Services.Interfaces;
+
+public interface INavigationBarConfigurationService
 {
-    public interface INavigationBarConfigurationService
-    {
-        NavigationBarConfiguration GetConfiguration(NavigationBarActionType actionType);
-    }
+    NavigationBarConfiguration GetConfiguration(NavigationBarActionType actionType);
 }

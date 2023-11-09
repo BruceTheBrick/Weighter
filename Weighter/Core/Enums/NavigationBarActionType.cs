@@ -1,11 +1,10 @@
-﻿namespace Weighter.Core.Enums
+﻿namespace Weighter.Core.Enums;
+
+public enum NavigationBarActionType
 {
-    public enum NavigationBarActionType
-    {
-        Close,
-        Back,
-        Next,
-        Done,
-        None,
-    }
+    Close,
+    Back,
+    Next,
+    Done,
+    None,
 }

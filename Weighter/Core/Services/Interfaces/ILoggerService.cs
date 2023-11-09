@@ -1,8 +1,7 @@
-﻿namespace Weighter.Core.Services.Interfaces
+﻿namespace Weighter.Core.Services.Interfaces;
+
+public interface ILoggerService
 {
-    public interface ILoggerService
-    {
-        public void Log(string message);
-        public void LogException(Exception exception);
-    }
+    public void Log(string message);
+    public void LogException(Exception exception);
 }

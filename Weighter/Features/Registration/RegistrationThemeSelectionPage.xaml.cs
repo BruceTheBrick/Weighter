@@ -1,13 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Features.Registration
+namespace Weighter.Features.Registration;
+
+[ExcludeFromCodeCoverage]
+public partial class RegistrationThemeSelectionPage
 {
-    [ExcludeFromCodeCoverage]
-    public partial class RegistrationThemeSelectionPage
+    public RegistrationThemeSelectionPage()
     {
-        public RegistrationThemeSelectionPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

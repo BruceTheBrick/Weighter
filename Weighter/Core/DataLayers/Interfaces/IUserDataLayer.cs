@@ -1,7 +1,6 @@
-﻿namespace Weighter.Core.DataLayers.Interfaces
+﻿namespace Weighter.Core.DataLayers.Interfaces;
+
+public interface IUserDataLayer
 {
-    public interface IUserDataLayer
-    {
-        bool AnyUsersRegistered();
-    }
+    bool AnyUsersRegistered();
 }

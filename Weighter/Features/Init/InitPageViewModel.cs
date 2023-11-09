@@ -3,56 +3,55 @@ using Weighter.Core.Services.Interfaces;
 using Weighter.Features.Login;
 using Weighter.Features.Registration;
 
-namespace Weighter.Features.Init
+namespace Weighter.Features.Init;
+
+public class InitPageViewModel : BasePageViewModel
 {
-    public class InitPageViewModel : BasePageViewModel
+    private readonly IAppInitializationService _appInitializationService;
+    private readonly IUserDataLayer _userDataLayer;
+
+    public InitPageViewModel(
+        IAppInitializationService appInitializationService,
+        IUserDataLayer userDataLayer,
+        IBaseService baseService)
+        : base(baseService)
     {
-        private readonly IAppInitializationService _appInitializationService;
-        private readonly IUserDataLayer _userDataLayer;
+        _appInitializationService = appInitializationService;
+        _userDataLayer = userDataLayer;
+    }
 
-        public InitPageViewModel(
-            IAppInitializationService appInitializationService,
-            IUserDataLayer userDataLayer,
-            IBaseService baseService)
-            : base(baseService)
+    public override async Task OnNavigatedToAsync(INavigationParameters parameters)
+    {
+        try
         {
-            _appInitializationService = appInitializationService;
-            _userDataLayer = userDataLayer;
+            await base.OnNavigatedToAsync(parameters);
+            await _appInitializationService.Initialize();
+            await StartApp();
+        }
+        catch (Exception e)
+        {
+            LoggerService.LogException(e);
+        }
+    }
+
+    private async Task StartApp()
+    {
+        if (_userDataLayer.AnyUsersRegistered())
+        {
+            await NavigateToLoginPage();
+            return;
         }
 
-        public override async Task OnNavigatedToAsync(INavigationParameters parameters)
-        {
-            try
-            {
-                await base.OnNavigatedToAsync(parameters);
-                await _appInitializationService.Initialize();
-                await StartApp();
-            }
-            catch (Exception e)
-            {
-                LoggerService.LogException(e);
-            }
-        }
+        await NavigateToRegistration();
+    }
 
-        private async Task StartApp()
-        {
-            if (_userDataLayer.AnyUsersRegistered())
-            {
-                await NavigateToLoginPage();
-                return;
-            }
+    private Task NavigateToLoginPage()
+    {
+        return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}");
+    }
 
-            await NavigateToRegistration();
-        }
-
-        private Task NavigateToLoginPage()
-        {
-            return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}");
-        }
-
-        private Task NavigateToRegistration()
-        {
-            return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(RegistrationWelcomePage)}");
-        }
+    private Task NavigateToRegistration()
+    {
+        return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(RegistrationWelcomePage)}");
     }
 }

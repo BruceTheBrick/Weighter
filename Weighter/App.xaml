@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<prism:PrismApplication
+<Application
     x:Class="Weighter.App"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:prism="http://prismlibrary.com">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -12,4 +11,4 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
-</prism:PrismApplication>
+</Application>

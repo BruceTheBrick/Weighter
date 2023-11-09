@@ -1,13 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Features.Login
+namespace Weighter.Features.Login;
+
+[ExcludeFromCodeCoverage]
+public partial class LoginPage
 {
-    [ExcludeFromCodeCoverage]
-    public partial class LoginPage
+    public LoginPage()
     {
-        public LoginPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

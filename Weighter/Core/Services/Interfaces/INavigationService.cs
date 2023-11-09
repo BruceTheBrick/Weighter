@@ -1,11 +1,10 @@
-﻿namespace Weighter.Core.Services.Interfaces
-{
-    public interface INavigationService
-    {
-        Task<INavigationResult> NavigateAsync(string uri);
-        Task<INavigationResult> NavigateAsync(string uri, INavigationParameters parameters);
+﻿namespace Weighter.Core.Services.Interfaces;
 
-        Task<INavigationResult> GoBack();
-        Task<INavigationResult> GoBack(INavigationParameters parameters);
-    }
+public interface INavigationService
+{
+    Task<INavigationResult> NavigateAsync(string uri);
+    Task<INavigationResult> NavigateAsync(string uri, INavigationParameters parameters);
+
+    Task<INavigationResult> GoBack();
+    Task<INavigationResult> GoBack(INavigationParameters parameters);
 }

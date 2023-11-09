@@ -42,18 +42,18 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.2.0" />
-        <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.0" />
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.0" />
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
+        <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.2.2" />
+        <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-        <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.191-beta" />
+        <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
         <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
         <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
-        <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.5" />
-        <PackageReference Include="SQLitePCLRaw.provider.e_sqlite3" Version="2.1.5" />
+        <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.6" />
+        <PackageReference Include="SQLitePCLRaw.provider.e_sqlite3" Version="2.1.6" />
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

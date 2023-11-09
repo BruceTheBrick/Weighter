@@ -1,7 +1,6 @@
-﻿namespace Weighter.Core.Services.Interfaces
+﻿namespace Weighter.Core.Services.Interfaces;
+
+public interface IAppInitializationService
 {
-    public interface IAppInitializationService
-    {
-        Task Initialize();
-    }
+    Task Initialize();
 }

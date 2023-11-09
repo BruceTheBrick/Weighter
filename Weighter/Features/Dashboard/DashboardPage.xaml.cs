@@ -1,13 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Features.Dashboard
+namespace Weighter.Features.Dashboard;
+
+[ExcludeFromCodeCoverage]
+public partial class DashboardPage
 {
-    [ExcludeFromCodeCoverage]
-    public partial class DashboardPage
+    public DashboardPage()
     {
-        public DashboardPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

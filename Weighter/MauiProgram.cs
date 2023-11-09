@@ -3,39 +3,39 @@ using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Markup;
 using Microsoft.Extensions.Logging;
 
-namespace Weighter
+namespace Weighter;
+
+public static class MauiProgram
 {
-    public static class MauiProgram
+    public static MauiApp CreateMauiApp()
     {
-        public static MauiApp CreateMauiApp()
-        {
-            var builder = MauiApp.CreateBuilder();
-            builder
-                .UsePrismApp<App>(PrismStartup.Configure)
-                .UseMauiCommunityToolkit(ConfigureCommunityToolkit)
-                .UseMauiCommunityToolkitMarkup()
-                .ConfigureFonts(ConfigureFonts)
-                .ConfigureEssentials(AppActionManager.ConfigureEssentials);
+        var builder = MauiApp.CreateBuilder();
+        builder
+            .UseMauiApp<App>()
+            .UsePrism(PrismStartup.Configure)
+            .UseMauiCommunityToolkit(ConfigureCommunityToolkit)
+            .UseMauiCommunityToolkitMarkup()
+            .ConfigureFonts(ConfigureFonts)
+            .ConfigureEssentials(AppActionManager.ConfigureEssentials);
 
-            EnableDebug(builder);
-            return builder.Build();
-        }
+        EnableDebug(builder);
+        return builder.Build();
+    }
 
-        private static void ConfigureFonts(IFontCollection fonts)
-        {
-            fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-            fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-        }
+    private static void ConfigureFonts(IFontCollection fonts)
+    {
+        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+        fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+    }
 
-        [Conditional("DEBUG")]
-        private static void EnableDebug(MauiAppBuilder builder)
-        {
-            builder.Logging.AddDebug();
-        }
+    [Conditional("DEBUG")]
+    private static void EnableDebug(MauiAppBuilder builder)
+    {
+        builder.Logging.AddDebug();
+    }
 
-        private static void ConfigureCommunityToolkit(Options options)
-        {
-            options.SetShouldSuppressExceptionsInConverters(true);
-        }
+    private static void ConfigureCommunityToolkit(Options options)
+    {
+        options.SetShouldSuppressExceptionsInConverters(true);
     }
 }

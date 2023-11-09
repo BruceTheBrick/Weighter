@@ -1,9 +1,8 @@
 ﻿using Weighter.Features.Registration._ViewModels;
 
-namespace Weighter.Core.DataLayers.Interfaces
+namespace Weighter.Core.DataLayers.Interfaces;
+
+public interface IRegistrationDataLayer
 {
-    public interface IRegistrationDataLayer
-    {
-        bool Register(RegistrationDetailsViewModel registrationDetailsViewModel);
-    }
+    bool Register(RegistrationDetailsViewModel registrationDetailsViewModel);
 }

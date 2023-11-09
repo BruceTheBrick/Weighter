@@ -2,21 +2,20 @@
 using Weighter.Core.Services.Interfaces;
 using Weighter.Features.WeightTracking;
 
-namespace Weighter.Features.Dashboard
+namespace Weighter.Features.Dashboard;
+
+public class DashboardPageViewModel : BasePageViewModel
 {
-    public class DashboardPageViewModel : BasePageViewModel
+    public DashboardPageViewModel(IBaseService baseService)
+        : base(baseService)
     {
-        public DashboardPageViewModel(IBaseService baseService)
-            : base(baseService)
-        {
-            NavigateToWeightSummaryPageCommand = new AsyncRelayCommand(NavigateToWeightSummaryPage);
-        }
+        NavigateToWeightSummaryPageCommand = new AsyncRelayCommand(NavigateToWeightSummaryPage);
+    }
 
-        public IAsyncRelayCommand NavigateToWeightSummaryPageCommand { get; }
+    public IAsyncRelayCommand NavigateToWeightSummaryPageCommand { get; }
 
-        private Task NavigateToWeightSummaryPage()
-        {
-            return NavigationService.NavigateAsync(nameof(WeightSummaryPage));
-        }
+    private Task NavigateToWeightSummaryPage()
+    {
+        return NavigationService.NavigateAsync(nameof(WeightSummaryPage));
     }
 }

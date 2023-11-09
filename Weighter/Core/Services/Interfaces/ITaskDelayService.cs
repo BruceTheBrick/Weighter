@@ -1,9 +1,8 @@
-namespace Weighter.Core.Services.Interfaces
+namespace Weighter.Core.Services.Interfaces;
+
+public interface ITaskDelayService
 {
-    public interface ITaskDelayService
-    {
-        Task DelayIos(int milliseconds);
-        Task DelayAndroid(int milliseconds);
-        Task Delay(int milliseconds);
-    }
+    Task DelayIos(int milliseconds);
+    Task DelayAndroid(int milliseconds);
+    Task Delay(int milliseconds);
 }

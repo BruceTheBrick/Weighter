@@ -1,8 +1,7 @@
-﻿namespace Weighter.Core.Models.Database
+﻿namespace Weighter.Core.Models.Database;
+
+public class BaseTable
 {
-    public class BaseTable
-    {
-        public DateTime UpdateDateTime { get; set; }
-        public DateTime CreatedDateTime { get; set; }
-    }
+    public DateTime UpdateDateTime { get; set; }
+    public DateTime CreatedDateTime { get; set; }
 }

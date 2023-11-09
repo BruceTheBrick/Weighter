@@ -1,11 +1,10 @@
 ﻿using Weighter.Features.Init;
 
-namespace Weighter.Core.Services
-{
-    public partial class NavigationService
-    {
-        public const string Startup = $"/{nameof(NavigationPage)}/{nameof(InitPage)}";
+namespace Weighter.Core.Services;
 
-        public const string RegistrationDetails = nameof(RegistrationDetails);
-    }
+public partial class NavigationService
+{
+    public const string Startup = $"/{nameof(NavigationPage)}/{nameof(InitPage)}";
+
+    public const string RegistrationDetails = nameof(RegistrationDetails);
 }

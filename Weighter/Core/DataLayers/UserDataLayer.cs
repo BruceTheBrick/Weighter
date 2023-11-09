@@ -3,21 +3,20 @@ using Weighter.Core.DataLayers.Interfaces;
 using Weighter.Core.Models.Database;
 using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Core.DataLayers
+namespace Weighter.Core.DataLayers;
+
+public class UserDataLayer : IUserDataLayer
 {
-    public class UserDataLayer : IUserDataLayer
+    private readonly ISqlClientService _clientService;
+
+    public UserDataLayer(ISqlClientService clientService)
     {
-        private readonly ISqlClientService _clientService;
+        _clientService = clientService;
+        _clientService.SetConnectionString(DbConstants.DbName);
+    }
 
-        public UserDataLayer(ISqlClientService clientService)
-        {
-            _clientService = clientService;
-            _clientService.SetConnectionString(DbConstants.DbName);
-        }
-
-        public bool AnyUsersRegistered()
-        {
-            return _clientService.Table<UserModel>().Any();
-        }
+    public bool AnyUsersRegistered()
+    {
+        return _clientService.Table<UserModel>().Any();
     }
 }
