@@ -1,14 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Features
+namespace Weighter.Features;
+
+[ExcludeFromCodeCoverage]
+public partial class SplashPage
 {
-    [ExcludeFromCodeCoverage]
-    public partial class SplashPage
+    public SplashPage()
     {
-        public SplashPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
-

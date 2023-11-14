@@ -1,7 +1,6 @@
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public interface ICrossFirebaseInitService
 {
-    public interface ICrossFirebaseInitService
-    {
-        public void Initialize();
-    }
+    public void Initialize();
 }

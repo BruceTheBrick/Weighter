@@ -1,7 +1,6 @@
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public interface IAnalyticsService
 {
-    public interface IAnalyticsService
-    {
-        public void TrackEvent(string eventName, string eventId, string value);
-    }
+    public void TrackEvent(string eventName, string eventId, string value);
 }

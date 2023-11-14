@@ -1,11 +1,9 @@
-namespace Weighter.Features
+namespace Weighter.Features;
+
+public partial class SettingsPage
 {
-    public partial class SettingsPage
+    public SettingsPage()
     {
-        public SettingsPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
-

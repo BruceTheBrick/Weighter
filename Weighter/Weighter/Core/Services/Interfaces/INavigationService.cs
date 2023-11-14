@@ -1,8 +1,7 @@
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public interface INavigationService
 {
-    public interface INavigationService
-    {
-        Task<INavigationResult> NavigateAsync(string url);
-        Task<INavigationResult> NavigateAsync(string url, INavigationParameters parameters);
-    }
+    Task<INavigationResult> NavigateAsync(string url);
+    Task<INavigationResult> NavigateAsync(string url, INavigationParameters parameters);
 }

@@ -1,14 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Features
+namespace Weighter.Features;
+
+[ExcludeFromCodeCoverage]
+public partial class WorkoutPage
 {
-    [ExcludeFromCodeCoverage]
-    public partial class WorkoutPage
+    public WorkoutPage()
     {
-        public WorkoutPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
-

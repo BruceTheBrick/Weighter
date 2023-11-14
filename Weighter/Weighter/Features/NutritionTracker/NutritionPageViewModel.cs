@@ -1,12 +1,11 @@
 using Weighter.Core;
 
-namespace Weighter.Features
+namespace Weighter.Features;
+
+public class NutritionPageViewModel : BaseTabbedPageViewModel
 {
-    public class NutritionPageViewModel : BaseTabbedPageViewModel
+    public NutritionPageViewModel(IBaseService baseService)
+        : base("Nutrition", "ic_food", baseService)
     {
-        public NutritionPageViewModel(IBaseService baseService)
-            : base("Nutrition", "ic_food", baseService)
-        {
-        }
     }
 }

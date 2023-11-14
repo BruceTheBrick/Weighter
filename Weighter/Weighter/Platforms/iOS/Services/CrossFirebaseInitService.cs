@@ -2,14 +2,13 @@ using Weighter.Core;
 using Plugin.Firebase.Core.Platforms.iOS;
 using Plugin.Firebase.Crashlytics;
 
-namespace Weighter.Platforms
+namespace Weighter.Platforms;
+
+public class CrossFirebaseInitService : ICrossFirebaseInitService
 {
-    public class CrossFirebaseInitService : ICrossFirebaseInitService
+    public void Initialize()
     {
-        public void Initialize()
-        {
-            CrossFirebase.Initialize();
-            CrossFirebaseCrashlytics.Current.SetCrashlyticsCollectionEnabled(true);
-        }
+        CrossFirebase.Initialize();
+        CrossFirebaseCrashlytics.Current.SetCrashlyticsCollectionEnabled(true);
     }
 }

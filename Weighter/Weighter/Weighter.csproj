@@ -28,24 +28,6 @@
         <Authors>Bryce Lynch</Authors>
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <MtouchExtraArgs>--interpreter</MtouchExtraArgs>
-      <CodesignKey>iPhone Developer</CodesignKey>
-      <AndroidSupportedAbis>armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
-      <MtouchLink>Full</MtouchLink>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
-      <CreatePackage>false</CreatePackage>
-      <MtouchInterpreter>-all</MtouchInterpreter>
-      <MtouchArch>ARMv7</MtouchArch>
-    </PropertyGroup>
-    
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-      <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    
     <ItemGroup>
         <!-- App Icon -->
         <MauiImage Include="Resources\Images\appicon.svg">
@@ -56,9 +38,7 @@
         </MauiIcon>
 
         <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Images\splash.svg">
-          <Color>#FFFFFF</Color>
-        </MauiSplashScreen>
+        <MauiSplashScreen Include="Resources\Images\splash.svg" Color="#FFFFFF"/>
 
         <!-- Images -->
         <MauiImage Include="Resources\Images\*" />
@@ -71,47 +51,35 @@
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
-    <!-- Android-->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+    <!-- Android -->
+    <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-android'))">
+        <Compile Remove="**\iOS\**\*.cs" />
+        <None Include="**\iOS\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
         <GoogleServicesJson Include="google-services.json" />
         <PackageReference Include="Xamarin.GooglePlayServices.Base" Version="118.1.0.1" />
         <PackageReference Include="Xamarin.Kotlin.StdLib.Jdk7" Version="1.8.0.1" ExcludeAssets="build;buildTransitive" />
         <PackageReference Include="Xamarin.Kotlin.StdLib.Jdk8" Version="1.8.0.1" ExcludeAssets="build;buildTransitive" />
     </ItemGroup>
-
-    <!-- IOS-->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-        <BundleResource Include="GoogleService-Info.plist" />
-    </ItemGroup>
-
-    
-    <!--    Platform-specific compilation-->
-    <!-- Android -->
-    <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-android')) != true">
-        <Compile Remove="**\Android\**\*.cs" />
-        <None Include="**\Android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-    </ItemGroup>
     
     <!-- iOS -->
-    <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-ios')) != true">
-        <Compile Remove="**\iOS\**\*.cs" />
-        <None Include="**\iOS\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-ios'))">
+        <Compile Remove="**\Android\**\*.cs" />
+        <None Include="**\Android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+        <BundleResource Include="GoogleService-Info.plist" />
     </ItemGroup>
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('net7.0-ios'))">
+        <RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+    </PropertyGroup>
     
     <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.1">
+        <PackageReference Include="CommunityToolkit.Maui" Version="5.3.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.4">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Plugin.Firebase" Version="2.0.3" />
+        <PackageReference Include="Plugin.Firebase" Version="2.0.5" />
         <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.191-beta" />
         <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
         <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Weighter.csproj.DotSettings" />
-      <Folder Include="Resources\Images\AppIcon" />
     </ItemGroup>
 </Project>

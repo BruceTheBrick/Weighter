@@ -1,10 +1,9 @@
 using System.ComponentModel;
 
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public interface IThemeService
 {
-    public interface IThemeService
-    {
-        public event PropertyChangedEventHandler PropertyChanged;
-        public Theme Theme { get; set; }
-    }
+    public event PropertyChangedEventHandler PropertyChanged;
+    public Theme Theme { get; set; }
 }

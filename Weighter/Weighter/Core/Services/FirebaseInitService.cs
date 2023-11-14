@@ -1,28 +1,27 @@
-namespace Weighter.Core
-{
-    public class FirebaseInitService : IFirebaseInitService
-    {
-        private readonly ICrossFirebaseInitService _crossFirebaseInitService;
-        private readonly IFeatureToggleService _featureToggleService;
+namespace Weighter.Core;
 
-        public FirebaseInitService(
-            ICrossFirebaseInitService crossFirebaseInitService,
-            IFeatureToggleService featureToggleService)
+public class FirebaseInitService : IFirebaseInitService
+{
+    private readonly ICrossFirebaseInitService _crossFirebaseInitService;
+    private readonly IFeatureToggleService _featureToggleService;
+
+    public FirebaseInitService(
+        ICrossFirebaseInitService crossFirebaseInitService,
+        IFeatureToggleService featureToggleService)
+    {
+        _crossFirebaseInitService = crossFirebaseInitService;
+        _featureToggleService = featureToggleService;
+    }
+    public async Task Initialize()
+    {
+        try
         {
-            _crossFirebaseInitService = crossFirebaseInitService;
-            _featureToggleService = featureToggleService;
+            _crossFirebaseInitService.Initialize();
+            await _featureToggleService.Initialize();
         }
-        public async Task Initialize()
+        catch (Exception e)
         {
-            try
-            {
-                _crossFirebaseInitService.Initialize();
-                await _featureToggleService.Initialize();
-            }
-            catch (Exception e)
-            {
                 
-            }
         }
     }
 }

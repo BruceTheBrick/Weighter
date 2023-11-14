@@ -1,7 +1,6 @@
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public interface IAccessibilityService
 {
-    public interface IAccessibilityService
-    {
-        void Announce(string announcement);
-    }
+    void Announce(string announcement);
 }

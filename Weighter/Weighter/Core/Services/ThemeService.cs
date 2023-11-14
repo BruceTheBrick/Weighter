@@ -1,45 +1,44 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public class ThemeService : IThemeService, INotifyPropertyChanged
 {
-    public class ThemeService : IThemeService, INotifyPropertyChanged
+    private Theme _theme;
+
+    public ThemeService()
     {
-        private Theme _theme;
+        Theme = Theme.System;
+    }
 
-        public ThemeService()
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    public Theme Theme
+    {
+        get => _theme;
+        set
         {
-            Theme = Theme.System;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public Theme Theme
-        {
-            get => _theme;
-            set
+            if (_theme == value)
             {
-                if (_theme == value)
-                {
-                    return;
-                }
-
-                _theme = value;
-                OnPropertyChanged();
+                return;
             }
-        }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            _theme = value;
+            OnPropertyChanged();
         }
+    }
 
-        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
-            field = value;
-            OnPropertyChanged(propertyName);
-            return true;
-        }
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+    {
+        if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+        field = value;
+        OnPropertyChanged(propertyName);
+        return true;
     }
 }

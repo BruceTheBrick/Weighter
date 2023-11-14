@@ -1,8 +1,7 @@
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public interface ITabPage
 {
-    public interface ITabPage
-    {
-        public string TabTitle { get; }
-        public string TabIcon { get; }
-    }
+    public string TabTitle { get; }
+    public string TabIcon { get; }
 }

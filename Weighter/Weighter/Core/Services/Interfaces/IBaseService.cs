@@ -1,8 +1,7 @@
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public interface IBaseService
 {
-    public interface IBaseService
-    {
-        public INavigationService NavigationService { get; }
-        public IAccessibilityService AccessibilityService { get; }
-    }
+    public INavigationService NavigationService { get; }
+    public IAccessibilityService AccessibilityService { get; }
 }

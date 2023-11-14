@@ -1,13 +1,12 @@
 using Plugin.Firebase.Core.Platforms.Android;
 using Weighter.Core;
 
-namespace Weighter.Platforms
+namespace Weighter.Platforms;
+
+public class CrossFirebaseInitService : ICrossFirebaseInitService
 {
-    public class CrossFirebaseInitService : ICrossFirebaseInitService
+    public void Initialize()
     {
-        public void Initialize()
-        {
-            CrossFirebase.Initialize(Platform.CurrentActivity);
-        }
+        CrossFirebase.Initialize(Platform.CurrentActivity);
     }
 }

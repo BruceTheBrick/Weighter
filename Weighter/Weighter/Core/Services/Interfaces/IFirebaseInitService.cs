@@ -1,7 +1,6 @@
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public interface IFirebaseInitService
 {
-    public interface IFirebaseInitService
-    {
-        public Task Initialize();
-    }
+    public Task Initialize();
 }

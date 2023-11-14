@@ -1,7 +1,6 @@
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public static class FeatureToggleConstants
 {
-    public static class FeatureToggleConstants
-    {
-        public static string Temp = nameof(Temp);
-    }
+    public static string Temp = nameof(Temp);
 }
