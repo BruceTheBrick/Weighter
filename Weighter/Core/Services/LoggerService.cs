@@ -1,8 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
-using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Core.Services;
+namespace Weighter.Core;
 
 public class LoggerService : ILoggerService
 {

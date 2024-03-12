@@ -1,9 +1,4 @@
-﻿using Weighter.Core.Databases.Interfaces;
-using Weighter.Core.DataLayers.Interfaces;
-using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Registration._ViewModels;
-
-namespace Weighter.Core.DataLayers;
+﻿namespace Weighter.Core;
 
 public class RegistrationDataLayer : IRegistrationDataLayer
 {

@@ -1,12 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Weighter.Core.DataLayers.Interfaces;
-using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Dashboard;
-using Weighter.Features.Registration._ViewModels;
 
-namespace Weighter.Features.Registration;
+namespace Weighter.Features;
 
-public class RegistrationThemeSelectionPageViewModel : BasePageViewModel
+public partial class RegistrationThemeSelectionPageViewModel : BasePageViewModel
 {
     private readonly IThemeService _themeService;
     private readonly IRegistrationDataLayer _registrationDataLayer;
@@ -19,11 +15,9 @@ public class RegistrationThemeSelectionPageViewModel : BasePageViewModel
     {
         _themeService = themeService;
         _registrationDataLayer = registrationDataLayer;
-        ContinueCommand = new AsyncRelayCommand(Continue);
     }
 
     public RegistrationDetailsViewModel RegistrationDetails { get; set; }
-    public IAsyncRelayCommand ContinueCommand { get; }
     public bool IsDarkModeEnabled
     {
         get => _themeService.IsDarkMode;
@@ -34,7 +28,7 @@ public class RegistrationThemeSelectionPageViewModel : BasePageViewModel
     {
         base.OnNavigatedTo(parameters);
         RegistrationDetails =
-            parameters.GetValue<RegistrationDetailsViewModel>(Core.Services.NavigationService.RegistrationDetails);
+            parameters.GetValue<RegistrationDetailsViewModel>(Core.NavigationService.RegistrationDetails);
     }
 
     private void UpdateTheme(bool isDarkModeEnabled)
@@ -44,6 +38,7 @@ public class RegistrationThemeSelectionPageViewModel : BasePageViewModel
         RegistrationDetails.Settings.AppTheme = theme;
     }
 
+    [RelayCommand]
     private Task Continue()
     {
         var successfullyRegistered = _registrationDataLayer.Register(RegistrationDetails);

@@ -1,8 +1,6 @@
 using SQLite;
-using Weighter.Core.Constants;
-using Weighter.Core.Enums;
 
-namespace Weighter.Core.Models.Database;
+namespace Weighter.Core;
 
 [Table(DbConstants.UserTable)]
 public class UserModel : BaseTable

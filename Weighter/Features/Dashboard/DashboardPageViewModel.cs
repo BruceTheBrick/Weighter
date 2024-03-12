@@ -1,19 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Weighter.Core.Services.Interfaces;
-using Weighter.Features.WeightTracking;
 
-namespace Weighter.Features.Dashboard;
+namespace Weighter.Features;
 
-public class DashboardPageViewModel : BasePageViewModel
+public partial class DashboardPageViewModel : BasePageViewModel
 {
     public DashboardPageViewModel(IBaseService baseService)
         : base(baseService)
     {
-        NavigateToWeightSummaryPageCommand = new AsyncRelayCommand(NavigateToWeightSummaryPage);
     }
 
-    public IAsyncRelayCommand NavigateToWeightSummaryPageCommand { get; }
-
+    [RelayCommand]
     private Task NavigateToWeightSummaryPage()
     {
         return NavigationService.NavigateAsync(nameof(WeightSummaryPage));

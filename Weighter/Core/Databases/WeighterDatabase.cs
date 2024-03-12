@@ -1,10 +1,6 @@
 ﻿using SQLite;
-using Weighter.Core.Constants;
-using Weighter.Core.Databases.Interfaces;
-using Weighter.Core.Models.Database;
-using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Core.Databases;
+namespace Weighter.Core;
 
 public class WeighterDatabase : IWeighterDatabase
 {

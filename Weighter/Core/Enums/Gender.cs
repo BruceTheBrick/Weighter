@@ -1,4 +1,4 @@
-namespace Weighter.Core.Enums;
+namespace Weighter.Core;
 
 public enum Gender
 {

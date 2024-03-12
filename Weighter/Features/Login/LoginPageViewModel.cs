@@ -1,19 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Dashboard;
 
-namespace Weighter.Features.Login;
+namespace Weighter.Features;
 
-public class LoginPageViewModel : BasePageViewModel
+public partial class LoginPageViewModel : BasePageViewModel
 {
     public LoginPageViewModel(IBaseService baseService)
         : base(baseService)
     {
-        NavigateToDashboardCommand = new AsyncRelayCommand(NavigateToDashboard);
     }
 
-    public IAsyncRelayCommand NavigateToDashboardCommand { get; }
-
+    [RelayCommand]
     private Task NavigateToDashboard()
     {
         return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(DashboardPage)}");

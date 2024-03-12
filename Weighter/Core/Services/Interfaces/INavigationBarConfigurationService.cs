@@ -1,7 +1,4 @@
-﻿using Weighter.Core.Enums;
-using Weighter.Core.Models.UI;
-
-namespace Weighter.Core.Services.Interfaces;
+﻿namespace Weighter.Core;
 
 public interface INavigationBarConfigurationService
 {

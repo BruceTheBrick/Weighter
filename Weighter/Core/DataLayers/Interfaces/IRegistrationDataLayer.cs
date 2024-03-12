@@ -1,6 +1,4 @@
-﻿using Weighter.Features.Registration._ViewModels;
-
-namespace Weighter.Core.DataLayers.Interfaces;
+﻿namespace Weighter.Core;
 
 public interface IRegistrationDataLayer
 {

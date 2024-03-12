@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using SQLite;
-using Weighter.Core.Constants;
 
-namespace Weighter.Core.Models.Database;
+namespace Weighter.Core;
 
 [SQLite.Table(DbConstants.UserSettingsTable)]
 public class UserSettingsModel

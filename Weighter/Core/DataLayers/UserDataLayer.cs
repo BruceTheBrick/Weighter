@@ -1,9 +1,4 @@
-﻿using Weighter.Core.Constants;
-using Weighter.Core.DataLayers.Interfaces;
-using Weighter.Core.Models.Database;
-using Weighter.Core.Services.Interfaces;
-
-namespace Weighter.Core.DataLayers;
+﻿namespace Weighter.Core;
 
 public class UserDataLayer : IUserDataLayer
 {

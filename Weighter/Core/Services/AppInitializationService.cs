@@ -1,8 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Weighter.Core.Databases.Interfaces;
-using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Core.Services;
+namespace Weighter.Core;
 
 public class AppInitializationService : IAppInitializationService
 {

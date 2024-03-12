@@ -1,6 +1,4 @@
-﻿using Weighter.Core.Services.Interfaces;
-
-namespace Weighter.Features.WeightTracking;
+﻿namespace Weighter.Features;
 
 public class WeightSummaryPageViewModel : BasePageViewModel
 {

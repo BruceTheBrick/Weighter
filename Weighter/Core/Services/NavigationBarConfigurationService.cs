@@ -1,10 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Weighter.Core.Enums;
-using Weighter.Core.Models.UI;
-using Weighter.Core.Services.Interfaces;
 using Weighter.Resources.Copy_Registers;
 
-namespace Weighter.Core.Services;
+namespace Weighter.Core;
 
 public class NavigationBarConfigurationService : INavigationBarConfigurationService
 {

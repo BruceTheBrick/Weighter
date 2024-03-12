@@ -1,4 +1,4 @@
-﻿namespace Weighter.Core.Services.Interfaces;
+﻿namespace Weighter.Core;
 
 public interface INavigationService
 {

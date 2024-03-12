@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Features.Init;
+namespace Weighter.Features;
 
 [ExcludeFromCodeCoverage]
 public partial class InitPage

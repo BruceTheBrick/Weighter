@@ -1,6 +1,5 @@
 ﻿using PropertyChanged;
-using Weighter.Core.Services.Interfaces;
-using INavigationService = Weighter.Core.Services.Interfaces.INavigationService;
+using INavigationService = Weighter.Core.INavigationService;
 
 namespace Weighter.Features;
 

@@ -1,32 +1,29 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Registration._ViewModels;
 
-namespace Weighter.Features.Registration;
+namespace Weighter.Features;
 
-public class RegistrationUserDetailsPageViewModel : BasePageViewModel
+public partial class RegistrationUserDetailsPageViewModel : BasePageViewModel
 {
     public RegistrationUserDetailsPageViewModel(IBaseService baseService)
         : base(baseService)
     {
-        NextCommand = new AsyncRelayCommand(Next);
     }
 
-    public IAsyncRelayCommand NextCommand { get; }
     public RegistrationDetailsViewModel RegistrationDetails { get; set; } = new ();
 
     public override void OnNavigatedTo(INavigationParameters parameters)
     {
         base.OnNavigatedTo(parameters);
-        if (parameters.TryGetValue<RegistrationDetailsViewModel>(Core.Services.NavigationService.RegistrationDetails, out var details))
+        if (parameters.TryGetValue<RegistrationDetailsViewModel>(Core.NavigationService.RegistrationDetails, out var details))
         {
             RegistrationDetails = details;
         }
     }
 
+    [RelayCommand]
     private Task Next()
     {
-        var parameters = new NavigationParameters { { Core.Services.NavigationService.RegistrationDetails, RegistrationDetails }, };
+        var parameters = new NavigationParameters { { Core.NavigationService.RegistrationDetails, RegistrationDetails }, };
         return NavigationService.NavigateAsync(nameof(RegistrationThemeSelectionPage), parameters);
     }
 }

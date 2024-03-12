@@ -1,5 +1,3 @@
-using Weighter.Features.WeightTracking;
-
 namespace Weighter;
 
 public class AppActionManager

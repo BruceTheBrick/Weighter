@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using INavigationService = Weighter.Core.Services.Interfaces.INavigationService;
 
-namespace Weighter.Core.Services;
+namespace Weighter.Core;
 
 [ExcludeFromCodeCoverage]
 public partial class NavigationService : INavigationService

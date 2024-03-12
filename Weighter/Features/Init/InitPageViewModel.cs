@@ -1,9 +1,4 @@
-using Weighter.Core.DataLayers.Interfaces;
-using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Login;
-using Weighter.Features.Registration;
-
-namespace Weighter.Features.Init;
+namespace Weighter.Features;
 
 public class InitPageViewModel : BasePageViewModel
 {

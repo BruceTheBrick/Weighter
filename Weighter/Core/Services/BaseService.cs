@@ -1,8 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Weighter.Core.Services.Interfaces;
-using INavigationService = Weighter.Core.Services.Interfaces.INavigationService;
 
-namespace Weighter.Core.Services;
+namespace Weighter.Core;
 
 [ExcludeFromCodeCoverage]
 public class BaseService : IBaseService

@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace Weighter.Core.Databases.Interfaces;
+namespace Weighter.Core;
 
 public interface IWeighterDatabase
 {

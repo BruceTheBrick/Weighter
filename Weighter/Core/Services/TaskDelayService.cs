@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
-using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Core.Services;
+namespace Weighter.Core;
 
 [ExcludeFromCodeCoverage]
 public class TaskDelayService : ITaskDelayService

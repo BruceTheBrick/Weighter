@@ -1,0 +1,10 @@
+﻿global using Weighter.Core;
+global using Weighter.Features;
+global using Weighter.Resources;
+global using Weighter.UI;
+global using Weighter.Tests.Base;
+global using Weighter.Tests.Core;
+global using Weighter.Tests.Factories;
+global using Weighter.Tests.Features;
+global using Xunit;
+global using FluentAssertions;

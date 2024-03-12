@@ -1,4 +1,4 @@
-﻿namespace Weighter.Core.Constants;
+﻿namespace Weighter.Core;
 
 public static class DbConstants
 {

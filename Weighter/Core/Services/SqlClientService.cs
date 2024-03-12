@@ -1,8 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using SQLite;
-using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Core.Services;
+namespace Weighter.Core;
 
 [ExcludeFromCodeCoverage]
 public class SqlClientService : ISqlClientService, IDisposable

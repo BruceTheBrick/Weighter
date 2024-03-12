@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace Weighter.Core.Services.Interfaces;
+namespace Weighter.Core;
 
 public interface ISqlClientService
 {

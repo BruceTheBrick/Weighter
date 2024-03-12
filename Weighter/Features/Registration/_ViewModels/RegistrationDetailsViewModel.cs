@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Weighter.Core.Models.Database;
 
-namespace Weighter.Features.Registration._ViewModels;
+namespace Weighter.Features;
 
 [ExcludeFromCodeCoverage]
 public class RegistrationDetailsViewModel

@@ -1,16 +1,7 @@
 ﻿using System.Diagnostics;
-using Weighter.Core.Databases;
-using Weighter.Core.Databases.Interfaces;
-using Weighter.Core.DataLayers;
-using Weighter.Core.DataLayers.Interfaces;
-using Weighter.Core.Services;
-using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Dashboard;
-using Weighter.Features.Init;
-using Weighter.Features.Login;
-using Weighter.Features.Registration;
-using Weighter.Features.WeightTracking;
-using INavigationService = Weighter.Core.Services.Interfaces.INavigationService;
+using INavigationService = Weighter.Core.INavigationService;
+using RegistrationUserDetailsPageViewModel = Weighter.Features.RegistrationUserDetailsPageViewModel;
+using RegistrationWelcomePageViewModel = Weighter.Features.RegistrationWelcomePageViewModel;
 
 namespace Weighter;
 

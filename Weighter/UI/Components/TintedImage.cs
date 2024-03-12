@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Maui.Behaviors;
 
-namespace Weighter.UI.Components;
+namespace Weighter.UI;
 
 public class TintedImage : Image
 {
@@ -33,7 +33,7 @@ public class TintedImage : Image
     private static void ApplyTintBehavior(TintedImage image, Color tintColor)
     {
         var tintBehavior = image.Behaviors.FirstOrDefault(x => x.GetType() == typeof(IconTintColorBehavior));
-        if (tintBehavior != null)
+        if (tintBehavior is not null)
         {
             image.Behaviors.Remove(tintBehavior);
         }

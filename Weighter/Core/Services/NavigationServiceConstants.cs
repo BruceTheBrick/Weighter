@@ -1,6 +1,4 @@
-﻿using Weighter.Features.Init;
-
-namespace Weighter.Core.Services;
+﻿namespace Weighter.Core;
 
 public partial class NavigationService
 {

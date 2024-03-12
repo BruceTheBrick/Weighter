@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Weighter.Core.Services.Interfaces;
+namespace Weighter.Core;
 
 public interface IThemeService
 {

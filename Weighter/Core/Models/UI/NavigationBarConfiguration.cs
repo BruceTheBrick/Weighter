@@ -1,4 +1,4 @@
-﻿namespace Weighter.Core.Models.UI;
+﻿namespace Weighter.Core;
 
 public class NavigationBarConfiguration
 {

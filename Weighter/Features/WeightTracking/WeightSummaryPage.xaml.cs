@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Features.WeightTracking;
+namespace Weighter.Features;
 
 public partial class WeightSummaryPage
 {

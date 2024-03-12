@@ -1,8 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Windows.Input;
-using Weighter.Core.Enums;
-using Weighter.Core.Models.UI;
-using Weighter.Core.Services;
 
 namespace Weighter.UI;
 

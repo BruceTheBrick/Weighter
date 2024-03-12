@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Weighter.Core.Services;
+namespace Weighter.Core;
 
 [ExcludeFromCodeCoverage]
 public class DeviceInfoService : IDeviceInfo

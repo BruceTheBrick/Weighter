@@ -1,18 +1,15 @@
 using CommunityToolkit.Mvvm.Input;
-using Weighter.Core.Services.Interfaces;
 
-namespace Weighter.Features.Registration;
+namespace Weighter.Features;
 
-public class RegistrationWelcomePageViewModel : BasePageViewModel
+public partial class RegistrationWelcomePageViewModel : BasePageViewModel
 {
     public RegistrationWelcomePageViewModel(IBaseService baseService)
         : base(baseService)
     {
-        ContinueCommand = new AsyncRelayCommand(Continue);
     }
 
-    public IAsyncRelayCommand ContinueCommand { get; }
-
+    [RelayCommand]
     private Task Continue()
     {
         return NavigationService.NavigateAsync(nameof(RegistrationUserDetailsPage));

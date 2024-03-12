@@ -58,6 +58,7 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="WhiteCane" Version="1.0.3" />
     </ItemGroup>
 
     <!-- Android-->
@@ -87,6 +88,10 @@
         </Compile>
         <Compile Update="Features\Registration\RegistrationWelcomePage.xaml.cs">
           <DependentUpon>WelcomePage.xaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="UI\Components\NavigationBar.xaml.cs">
+          <DependentUpon>NavigationBar.xaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
     </ItemGroup>
@@ -130,6 +135,9 @@
     
     <ItemGroup>
       <MauiXaml Update="Features\Registration\RegistrationWelcomePage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+      <MauiXaml Update="UI\Components\NavigationBar.xaml">
         <SubType>Designer</SubType>
       </MauiXaml>
     </ItemGroup>
