@@ -29,24 +29,9 @@ public class InitPageViewModel : BasePageViewModel
         }
     }
 
-    private async Task StartApp()
+    private Task StartApp()
     {
-        if (_userDataLayer.AnyUsersRegistered())
-        {
-            await NavigateToLoginPage();
-            return;
-        }
-
-        await NavigateToRegistration();
-    }
-
-    private Task NavigateToLoginPage()
-    {
-        return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}");
-    }
-
-    private Task NavigateToRegistration()
-    {
-        return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(RegistrationWelcomePage)}");
+        var destinationPage = _userDataLayer.AnyUsersRegistered() ? Routes.LoginPage : Routes.RegistrationWelcomePage;
+        return NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{destinationPage}");
     }
 }

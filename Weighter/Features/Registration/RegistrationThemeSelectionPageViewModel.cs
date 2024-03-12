@@ -27,8 +27,7 @@ public partial class RegistrationThemeSelectionPageViewModel : BasePageViewModel
     public override void OnNavigatedTo(INavigationParameters parameters)
     {
         base.OnNavigatedTo(parameters);
-        RegistrationDetails =
-            parameters.GetValue<RegistrationDetailsViewModel>(Core.NavigationService.RegistrationDetails);
+        RegistrationDetails = parameters.GetValue<RegistrationDetailsViewModel>(Core.NavigationService.RegistrationDetails);
     }
 
     private void UpdateTheme(bool isDarkModeEnabled)
@@ -44,7 +43,7 @@ public partial class RegistrationThemeSelectionPageViewModel : BasePageViewModel
         var successfullyRegistered = _registrationDataLayer.Register(RegistrationDetails);
         if (successfullyRegistered)
         {
-            return NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(DashboardPage)}");
+            return NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{Routes.DashboardPage}");
         }
 
         return Task.CompletedTask;

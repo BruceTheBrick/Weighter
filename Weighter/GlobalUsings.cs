@@ -2,3 +2,4 @@
 global using Weighter.Features;
 global using Weighter.Resources;
 global using Weighter.UI;
+global using epj.RouteGenerator;

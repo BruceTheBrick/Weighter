@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net7.0;net7.0-android;net7.0-ios;</TargetFrameworks>
-        <OutputType Condition="'$(TargetFramework)' != 'net7.0'">Exe</OutputType>
+        <TargetFrameworks>net8.0;net8.0-android;net8.0-ios;</TargetFrameworks>
+        <OutputType Condition="'$(TargetFramework)' != 'net8.0'">Exe</OutputType>
         <RootNamespace>Weighter</RootNamespace>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
@@ -42,19 +42,22 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="AsyncAwaitBestPractices" Version="7.0.0" />
+        <PackageReference Include="CommunityToolkit.Common" Version="8.2.2" />
         <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.2.2" />
         <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
-        <PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-        <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
+        <PackageReference Include="epj.RouteGenerator" Version="1.0.1" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.1.24080.9" />
+        <PackageReference Include="Prism.DryIoc.Maui" Version="9.0.401-pre" />
         <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
-        <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
-        <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.6" />
-        <PackageReference Include="SQLitePCLRaw.provider.e_sqlite3" Version="2.1.6" />
-        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+        <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+        <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.8" />
+        <PackageReference Include="SQLitePCLRaw.provider.e_sqlite3" Version="2.1.8" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -62,57 +65,43 @@
     </ItemGroup>
 
     <!-- Android-->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
         <GoogleServicesJson Include="**\Android\google-services.json" />
     </ItemGroup>
 
     <!-- Android -->
-    <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-android')) != true">
+    <ItemGroup Condition="$(TargetFramework.StartsWith('net8.0-android')) != true">
         <Compile Remove="**\Android\**\*.cs" />
         <None Include="**\Android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-        <None Remove="FodyWeavers.xml" />
-        <Compile Update="Resources\Copy Registers\RegistrationRegister.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>RegistrationRegister.resx</DependentUpon>
-        </Compile>
-        <Compile Update="Resources\Copy Registers\InitRegister.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>InitRegister.resx</DependentUpon>
-        </Compile>
-        <Compile Update="Resources\Copy Registers\GlobalRegister.Designer.cs">
-          <DesignTime>True</DesignTime>
-          <AutoGen>True</AutoGen>
-          <DependentUpon>GlobalRegister.resx</DependentUpon>
-        </Compile>
-        <Compile Update="Features\Registration\RegistrationWelcomePage.xaml.cs">
-          <DependentUpon>WelcomePage.xaml</DependentUpon>
-          <SubType>Code</SubType>
-        </Compile>
-        <Compile Update="UI\Components\NavigationBar.xaml.cs">
-          <DependentUpon>NavigationBar.xaml</DependentUpon>
-          <SubType>Code</SubType>
-        </Compile>
     </ItemGroup>
 
     <!-- IOS-->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
         <BundleResource Include="**\iOS\GoogleService-Info.plist" />
     </ItemGroup>
 
-    <!-- iOS -->
-    <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-ios')) != true">
+    <!-- IOS -->
+    <ItemGroup Condition="$(TargetFramework.StartsWith('net8.0-ios')) != true">
         <Compile Remove="**\iOS\**\*.cs" />
         <None Include="**\iOS\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
     </ItemGroup>
     
     <ItemGroup>
-      <Folder Include="Platforms\Android\Services\" />
-      <Folder Include="Platforms\iOS\Services\" />
-    </ItemGroup>
-    
-    <ItemGroup>
+        <Compile Update="Resources\Copy Registers\RegistrationRegister.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>RegistrationRegister.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Resources\Copy Registers\InitRegister.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>InitRegister.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Resources\Copy Registers\GlobalRegister.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>GlobalRegister.resx</DependentUpon>
+        </Compile>
       <EmbeddedResource Update="Resources\Copy Registers\RegistrationRegister.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>RegistrationRegister.Designer.cs</LastGenOutput>
@@ -125,20 +114,5 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>GlobalRegister.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Reference Include="CommunityToolkit.Maui">
-        <HintPath>..\..\..\.nuget\packages\communitytoolkit.maui\5.2.0\lib\net7.0\CommunityToolkit.Maui.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-    
-    <ItemGroup>
-      <MauiXaml Update="Features\Registration\RegistrationWelcomePage.xaml">
-        <SubType>Designer</SubType>
-      </MauiXaml>
-      <MauiXaml Update="UI\Components\NavigationBar.xaml">
-        <SubType>Designer</SubType>
-      </MauiXaml>
     </ItemGroup>
 </Project>

@@ -1,7 +1,5 @@
 ﻿using System.Diagnostics;
 using INavigationService = Weighter.Core.INavigationService;
-using RegistrationUserDetailsPageViewModel = Weighter.Features.RegistrationUserDetailsPageViewModel;
-using RegistrationWelcomePageViewModel = Weighter.Features.RegistrationWelcomePageViewModel;
 
 namespace Weighter;
 
@@ -10,7 +8,7 @@ public static class PrismStartup
     public static void Configure(PrismAppBuilder builder)
     {
         builder.RegisterTypes(RegisterTypes);
-        builder.OnAppStart(NavigationService.Startup);
+        builder.CreateWindow(NavigationService.Startup);
     }
 
     private static void RegisterTypes(IContainerRegistry containerRegistry)
@@ -24,6 +22,7 @@ public static class PrismStartup
         RegisterDataLayers(containerRegistry);
         RegisterDatabaseServices(containerRegistry);
         RegisterSingletons(containerRegistry);
+        RegisterMauiServices(containerRegistry);
 
         RegisterIosPlatformServices(containerRegistry);
         RegisterAndroidPlatformServices(containerRegistry);
@@ -32,7 +31,6 @@ public static class PrismStartup
         containerRegistry.Register<INavigationService, NavigationService>();
         containerRegistry.Register<ISqlClientService, SqlClientService>();
         containerRegistry.Register<ITaskDelayService, TaskDelayService>();
-        containerRegistry.Register<IDeviceInfo, DeviceInfoService>();
         containerRegistry.Register<ILoggerService, LoggerService>();
         containerRegistry.Register<IAppInitializationService, AppInitializationService>();
     }
@@ -51,6 +49,13 @@ public static class PrismStartup
     private static void RegisterSingletons(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterSingleton<IThemeService, ThemeService>();
+    }
+
+    private static void RegisterMauiServices(IContainerRegistry containerRegistry)
+    {
+        containerRegistry.Register<IDeviceInfo>(() => DeviceInfo.Current);
+        containerRegistry.Register<IDeviceDisplay>(() => DeviceDisplay.Current);
+        containerRegistry.Register<IVersionTracking>(() => VersionTracking.Default);
     }
 
     private static void RegisterPagesForNavigation(IContainerRegistry containerRegistry)

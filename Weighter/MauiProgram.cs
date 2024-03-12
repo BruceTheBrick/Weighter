@@ -5,6 +5,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Weighter;
 
+[AutoRoutes("Page")]
+[ExtraRoute(nameof(NavigationPage))]
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()

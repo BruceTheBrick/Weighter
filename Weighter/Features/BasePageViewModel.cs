@@ -1,10 +1,11 @@
-﻿using PropertyChanged;
+﻿using AsyncAwaitBestPractices;
+using PropertyChanged;
 using INavigationService = Weighter.Core.INavigationService;
 
 namespace Weighter.Features;
 
 [AddINotifyPropertyChangedInterface]
-public class BasePageViewModel : INavigatedAware, IPageLifecycleAware
+public class BasePageViewModel : INavigatedAware, IPageLifecycleAware, IInitialize, IInitializeAsync
 {
     public BasePageViewModel(IBaseService baseService)
     {
@@ -17,7 +18,7 @@ public class BasePageViewModel : INavigatedAware, IPageLifecycleAware
 
     public virtual void OnAppearing()
     {
-        _ = OnAppearingAsync();
+        OnAppearingAsync().SafeFireAndForget();
     }
 
     public virtual Task OnAppearingAsync()
@@ -27,7 +28,7 @@ public class BasePageViewModel : INavigatedAware, IPageLifecycleAware
 
     public virtual void OnDisappearing()
     {
-        _ = OnDisappearingAsync();
+        OnDisappearingAsync().SafeFireAndForget();
     }
 
     public virtual Task OnDisappearingAsync()
@@ -37,7 +38,7 @@ public class BasePageViewModel : INavigatedAware, IPageLifecycleAware
 
     public virtual void OnNavigatedFrom(INavigationParameters parameters)
     {
-        _ = OnNavigatedFromAsync(parameters);
+        OnNavigatedFromAsync(parameters).SafeFireAndForget();
     }
 
     public virtual Task OnNavigatedFromAsync(INavigationParameters parameters)
@@ -47,10 +48,19 @@ public class BasePageViewModel : INavigatedAware, IPageLifecycleAware
 
     public virtual void OnNavigatedTo(INavigationParameters parameters)
     {
-        _ = OnNavigatedToAsync(parameters);
+        OnNavigatedToAsync(parameters).SafeFireAndForget();
     }
 
     public virtual Task OnNavigatedToAsync(INavigationParameters parameters)
+    {
+        return Task.CompletedTask;
+    }
+
+    public void Initialize(INavigationParameters parameters)
+    {
+    }
+
+    public Task InitializeAsync(INavigationParameters parameters)
     {
         return Task.CompletedTask;
     }
