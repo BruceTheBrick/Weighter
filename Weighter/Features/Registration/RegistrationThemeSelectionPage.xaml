@@ -6,14 +6,20 @@
     xmlns:features="clr-namespace:Weighter.Features"
     xmlns:ui="clr-namespace:Weighter.UI"
     x:DataType="features:RegistrationThemeSelectionPageViewModel">
-    <StackLayout>
-        <ui:TintedImage
-            HeightRequest="60"
-            Source="{AppThemeBinding Dark='ic_moon',
-                                     Light='ic_sun'}"
-            TintColor="{AppThemeBinding Dark='White',
-                                        Light='Black'}"
-            WidthRequest="60" />
-        <Switch IsToggled="{Binding IsDarkModeEnabled}" />
-    </StackLayout>
+    <Grid RowDefinitions="Auto, *">
+        <ui:NavigationBar
+            Grid.Row="0"
+            LeftActionType="Back"
+            LeftCommand="{Binding BackCommand}" />
+        <VerticalStackLayout Grid.Row="1">
+            <ui:TintedImage
+                HeightRequest="60"
+                Source="{AppThemeBinding Dark='ic_moon',
+                                         Light='ic_sun'}"
+                TintColor="{AppThemeBinding Dark='White',
+                                            Light='Black'}"
+                WidthRequest="60" />
+            <Switch IsToggled="{Binding IsDarkModeEnabled}" />
+        </VerticalStackLayout>
+    </Grid>
 </features:BasePage>

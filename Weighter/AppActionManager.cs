@@ -23,7 +23,7 @@ public class AppActionManager
         var page = string.Empty;
         if (appAction.Id == "test_icon")
         {
-            page = $"/{nameof(NavigationPage)}/{nameof(WeightSummaryPage)}";
+            page = $"/{Routes.NavigationPage}/{Routes.WeightSummaryPage}";
         }
     }
 }

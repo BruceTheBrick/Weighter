@@ -32,10 +32,11 @@ public class TintedImage : Image
 
     private static void ApplyTintBehavior(TintedImage image, Color tintColor)
     {
-        var tintBehavior = image.Behaviors.FirstOrDefault(x => x.GetType() == typeof(IconTintColorBehavior));
-        if (tintBehavior is not null)
+        var behavior = image.Behaviors.FirstOrDefault(x => x.GetType() == typeof(IconTintColorBehavior));
+        if (behavior is IconTintColorBehavior tintColorBehavior)
         {
-            image.Behaviors.Remove(tintBehavior);
+            tintColorBehavior.TintColor = tintColor;
+            return;
         }
 
         image.Behaviors.Add(new IconTintColorBehavior { TintColor = tintColor });

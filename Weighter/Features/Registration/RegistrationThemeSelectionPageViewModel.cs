@@ -33,8 +33,8 @@ public partial class RegistrationThemeSelectionPageViewModel : BasePageViewModel
     private void UpdateTheme(bool isDarkModeEnabled)
     {
         var theme = isDarkModeEnabled ? AppTheme.Dark : AppTheme.Light;
-        _themeService.Theme = theme;
         RegistrationDetails.Settings.AppTheme = theme;
+        _themeService.Theme = theme;
     }
 
     [RelayCommand]
@@ -47,5 +47,11 @@ public partial class RegistrationThemeSelectionPageViewModel : BasePageViewModel
         }
 
         return Task.CompletedTask;
+    }
+
+    [RelayCommand]
+    private Task Back()
+    {
+        return NavigationService.GoBack();
     }
 }

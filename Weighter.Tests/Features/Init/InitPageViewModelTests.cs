@@ -26,7 +26,7 @@ public class InitPageViewModelTests : UnitTestBase<InitPageViewModel>
         await Sut.OnNavigatedToAsync(new NavigationParameters());
 
         //Assert
-        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}"));
+        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{Routes.LoginPage}"));
     }
 
     [Fact]
@@ -39,7 +39,7 @@ public class InitPageViewModelTests : UnitTestBase<InitPageViewModel>
         await Sut.OnNavigatedToAsync(new NavigationParameters());
 
         //Assert
-        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(RegistrationWelcomePage)}"));
+        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{Routes.RegistrationWelcomePage}"));
     }
 
     [Fact]

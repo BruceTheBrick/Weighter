@@ -13,7 +13,7 @@ public class RegistrationWelcomePageViewModelTests : UnitTestBase<RegistrationWe
         await Sut.ContinueCommand.ExecuteAsync(null);
 
         //Assert
-        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync(nameof(RegistrationUserDetailsPage)));
+        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync(Routes.RegistrationUserDetailsPage));
     }
 
     #endregion

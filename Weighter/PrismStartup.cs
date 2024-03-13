@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using CommunityToolkit.Maui.Core;
 using INavigationService = Weighter.Core.INavigationService;
 
 namespace Weighter;
@@ -33,6 +34,7 @@ public static class PrismStartup
         containerRegistry.Register<ITaskDelayService, TaskDelayService>();
         containerRegistry.Register<ILoggerService, LoggerService>();
         containerRegistry.Register<IAppInitializationService, AppInitializationService>();
+        containerRegistry.Register<IAlertService, AlertService>();
     }
 
     private static void RegisterDataLayers(IContainerRegistry containerRegistry)
@@ -53,6 +55,7 @@ public static class PrismStartup
 
     private static void RegisterMauiServices(IContainerRegistry containerRegistry)
     {
+        containerRegistry.Register<IPlatformApplication>(() => Application.Current);
         containerRegistry.Register<IDeviceInfo>(() => DeviceInfo.Current);
         containerRegistry.Register<IDeviceDisplay>(() => DeviceDisplay.Current);
         containerRegistry.Register<IVersionTracking>(() => VersionTracking.Default);

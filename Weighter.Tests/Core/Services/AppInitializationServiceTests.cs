@@ -17,15 +17,17 @@ public class AppInitializationServiceTests : UnitTestBase<AppInitializationServi
     }
 
     [Fact]
-    public async Task Initialize_ShouldSetupThemeService_WhenCurrentIsNotNull()
+    public async Task Initialize_ShouldSetupThemeService()
     {
         //Arrange
+        var theme = Faker.PickRandom<AppTheme>();
+        Mocker.GetMock<IApplication>().Setup(x => x.UserAppTheme).Returns(theme);
 
         //Act
-        await SutMock.Object.Initialize();
+        await Sut.Initialize();
 
         //Assert
-        SutMock.Verify(x => x.SetupThemeService());
+        Mocker.GetMock<IThemeService>().VerifySet(x => x.Theme = theme);
     }
 
     #endregion
