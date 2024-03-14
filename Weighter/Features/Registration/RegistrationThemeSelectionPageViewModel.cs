@@ -18,21 +18,20 @@ public partial class RegistrationThemeSelectionPageViewModel : BasePageViewModel
     }
 
     public RegistrationDetailsViewModel RegistrationDetails { get; set; }
-    public bool IsDarkModeEnabled
-    {
-        get => _themeService.IsDarkMode;
-        set => UpdateTheme(value);
-    }
+    public bool IsDarkModeEnabled { get; set; }
 
     public override void OnNavigatedTo(INavigationParameters parameters)
     {
         base.OnNavigatedTo(parameters);
         RegistrationDetails = parameters.GetValue<RegistrationDetailsViewModel>(Core.NavigationService.RegistrationDetails);
+        IsDarkModeEnabled = _themeService.IsDarkMode;
     }
 
+    [RelayCommand]
     private void UpdateTheme(bool isDarkModeEnabled)
     {
-        var theme = isDarkModeEnabled ? AppTheme.Dark : AppTheme.Light;
+        IsDarkModeEnabled = isDarkModeEnabled;
+        var theme = IsDarkModeEnabled ? AppTheme.Dark : AppTheme.Light;
         RegistrationDetails.Settings.AppTheme = theme;
         _themeService.Theme = theme;
     }

@@ -8,10 +8,10 @@
     xmlns:features="clr-namespace:Weighter.Features"
     x:DataType="features:RegistrationWelcomePageViewModel">
     <Grid Padding="16">
-        <StackLayout effects:AccessibilityTraits.Traits="Button" VerticalOptions="Center">
+        <VerticalStackLayout effects:AccessibilityTraits.Traits="Button" VerticalOptions="Center">
             <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_001}" />
             <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_002}" />
-        </StackLayout>
+        </VerticalStackLayout>
         <Button
             Command="{Binding ContinueCommand}"
             Text="{x:Static copyRegisters:RegistrationRegister.REG_003}"

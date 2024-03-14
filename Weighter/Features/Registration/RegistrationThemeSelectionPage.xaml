@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:features="clr-namespace:Weighter.Features"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:ui="clr-namespace:Weighter.UI"
     x:DataType="features:RegistrationThemeSelectionPageViewModel">
     <Grid RowDefinitions="Auto, *">
@@ -11,15 +12,56 @@
             Grid.Row="0"
             LeftActionType="Back"
             LeftCommand="{Binding BackCommand}" />
-        <VerticalStackLayout Grid.Row="1">
-            <ui:TintedImage
-                HeightRequest="60"
-                Source="{AppThemeBinding Dark='ic_moon',
-                                         Light='ic_sun'}"
-                TintColor="{AppThemeBinding Dark='White',
-                                            Light='Black'}"
-                WidthRequest="60" />
-            <Switch IsToggled="{Binding IsDarkModeEnabled}" />
-        </VerticalStackLayout>
+        <Grid
+            Grid.Row="1"
+            Margin="16"
+            ColumnDefinitions="*, *"
+            ColumnSpacing="16"
+            RowDefinitions="Auto, Auto">
+            <Border
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                Padding="8"
+                BackgroundColor="#2d2d2d2d"
+                StrokeShape="RoundRectangle 16">
+                <VerticalStackLayout>
+                    <ui:TintedImage
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        Source="ic_sun"
+                        TintColor="{AppThemeBinding Dark='White',
+                                                    Light='Black'}"
+                        WidthRequest="60" />
+                    <RadioButton
+                        HorizontalOptions="Center"
+                        InputTransparent="True"
+                        IsChecked="{Binding IsDarkModeEnabled, Converter={toolkit:InvertedBoolConverter}}" />
+                </VerticalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding UpdateThemeCommand}" CommandParameter="{x:Boolean False}" />
+                </Border.GestureRecognizers>
+            </Border>
+
+            <Border
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Padding="8"
+                BackgroundColor="#2d2d2d2d"
+                StrokeShape="RoundRectangle 16">
+                <VerticalStackLayout>
+                    <ui:TintedImage
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        Source="ic_moon"
+                        TintColor="{AppThemeBinding Dark='White',
+                                                    Light='Black'}"
+                        WidthRequest="60" />
+                    <RadioButton InputTransparent="True" HorizontalOptions="Center" IsChecked="{Binding IsDarkModeEnabled}" />
+                </VerticalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding UpdateThemeCommand}" CommandParameter="{x:Boolean True}" />
+                </Border.GestureRecognizers>
+            </Border>
+        </Grid>
     </Grid>
 </features:BasePage>

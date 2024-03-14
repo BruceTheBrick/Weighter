@@ -10,12 +10,11 @@
     <Grid RowDefinitions="auto, *">
         <ui:NavigationBar Title="User Details" />
         <ScrollView Grid.Row="1" Margin="16">
-            <StackLayout Spacing="24">
-
-                <StackLayout>
+            <VerticalStackLayout Spacing="24">
+                <VerticalStackLayout>
                     <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_007}" />
                     <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_008}" />
-                </StackLayout>
+                </VerticalStackLayout>
 
                 <!--  First name  -->
                 <Entry Placeholder="{x:Static copyRegisters:RegistrationRegister.REG_004}" Text="{Binding RegistrationDetails.User.FirstName}" />
@@ -31,7 +30,7 @@
                     Command="{Binding NextCommand}"
                     Text="{x:Static copyRegisters:GlobalRegister.GLOBAL_002}"
                     VerticalOptions="End" />
-            </StackLayout>
+            </VerticalStackLayout>
         </ScrollView>
     </Grid>
 </features:BasePage>

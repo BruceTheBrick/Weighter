@@ -20,14 +20,14 @@ public class TintedImage : Image
         set => SetValue(TintColorProperty, value);
     }
 
-    private static void TintColorChanged(BindableObject bindable, object oldvalue, object newvalue)
+    private static void TintColorChanged(BindableObject bindable, object oldValue, object newValue)
     {
         if (!(bindable is TintedImage image))
         {
             return;
         }
 
-        ApplyTintBehavior(image, (Color)newvalue);
+        ApplyTintBehavior(image, (Color)newValue);
     }
 
     private static void ApplyTintBehavior(TintedImage image, Color tintColor)
