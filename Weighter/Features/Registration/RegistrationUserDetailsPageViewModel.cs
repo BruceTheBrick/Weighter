@@ -24,6 +24,12 @@ public partial class RegistrationUserDetailsPageViewModel : BasePageViewModel
     private Task Next()
     {
         var parameters = new NavigationParameters { { Core.NavigationService.RegistrationDetails, RegistrationDetails }, };
-        return NavigationService.NavigateAsync(Routes.RegistrationThemeSelectionPage, parameters);
+        return NavigationService.Navigate(Routes.RegistrationThemeSelectionPage, parameters);
+    }
+
+    [RelayCommand]
+    private Task Back()
+    {
+        return NavigationService.GoBack();
     }
 }

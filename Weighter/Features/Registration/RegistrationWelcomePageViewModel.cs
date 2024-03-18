@@ -12,6 +12,6 @@ public partial class RegistrationWelcomePageViewModel : BasePageViewModel
     [RelayCommand]
     private Task Continue()
     {
-        return NavigationService.NavigateAsync(Routes.RegistrationUserDetailsPage);
+        return NavigationService.Navigate(Routes.RegistrationUserDetailsPage);
     }
 }

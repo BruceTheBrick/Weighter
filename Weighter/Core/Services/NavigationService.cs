@@ -11,12 +11,12 @@ public partial class NavigationService : INavigationService
         _navigationService = navigationService;
     }
 
-    public Task<INavigationResult> NavigateAsync(string uri)
+    public Task<INavigationResult> Navigate(string uri)
     {
         return _navigationService.NavigateAsync(uri);
     }
 
-    public Task<INavigationResult> NavigateAsync(string uri, INavigationParameters parameters)
+    public Task<INavigationResult> Navigate(string uri, INavigationParameters parameters)
     {
         return _navigationService.NavigateAsync(uri, parameters);
     }

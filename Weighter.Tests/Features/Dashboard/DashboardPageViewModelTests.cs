@@ -13,7 +13,7 @@ public class DashboardPageViewModelTests : UnitTestBase<DashboardPageViewModel>
         await Sut.NavigateToWeightSummaryPageCommand.ExecuteAsync(null);
 
         //Assert
-        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync(Routes.WeightSummaryPage));
+        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.Navigate(Routes.WeightSummaryPage));
     }
         
     #endregion

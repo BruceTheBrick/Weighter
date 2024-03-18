@@ -2,8 +2,8 @@
 
 public interface INavigationService
 {
-    Task<INavigationResult> NavigateAsync(string uri);
-    Task<INavigationResult> NavigateAsync(string uri, INavigationParameters parameters);
+    Task<INavigationResult> Navigate(string uri);
+    Task<INavigationResult> Navigate(string uri, INavigationParameters parameters);
 
     Task<INavigationResult> GoBack();
     Task<INavigationResult> GoBack(INavigationParameters parameters);

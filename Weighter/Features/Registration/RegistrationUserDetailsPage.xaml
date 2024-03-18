@@ -5,10 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:copyRegisters="clr-namespace:Weighter.Resources.Copy_Registers"
     xmlns:features="clr-namespace:Weighter.Features"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
     xmlns:ui="clr-namespace:Weighter.UI"
+    xmlns:validations="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
     x:DataType="features:RegistrationUserDetailsPageViewModel">
     <Grid RowDefinitions="auto, *">
-        <ui:NavigationBar Title="User Details" />
+        <ui:NavigationBar
+            Title="User Details"
+            LeftActionType="Back"
+            LeftCommand="{Binding BackCommand}"
+            RightActionType="Next"
+            RightCommand="{Binding NextCommand}" />
         <ScrollView Grid.Row="1" Margin="16">
             <VerticalStackLayout Spacing="24">
                 <VerticalStackLayout>
@@ -16,8 +23,11 @@
                     <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_008}" />
                 </VerticalStackLayout>
 
-                <!--  First name  -->
-                <Entry Placeholder="{x:Static copyRegisters:RegistrationRegister.REG_004}" Text="{Binding RegistrationDetails.User.FirstName}" />
+                <!--  First Name  -->
+                <material:TextField Title="{x:Static copyRegisters:RegistrationRegister.REG_004}" Text="{Binding RegistrationDetails.User.FirstName}">
+                    <validations:RequiredValidation />
+                    <validations:LettersOnlyValidation AllowSpaces="True" />
+                </material:TextField>
 
                 <!--  Last name  -->
                 <Entry Placeholder="{x:Static copyRegisters:RegistrationRegister.REG_005}" Text="{Binding RegistrationDetails.User.LastName}" />

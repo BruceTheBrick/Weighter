@@ -3,10 +3,10 @@
 namespace Weighter.Features;
 
 [ExcludeFromCodeCoverage]
-public partial class BasePage
+public class BasePage : ContentPage
 {
     public BasePage()
     {
-        InitializeComponent();
+        NavigationPage.SetHasNavigationBar(this, false);
     }
 }

@@ -12,6 +12,6 @@ public partial class DashboardPageViewModel : BasePageViewModel
     [RelayCommand]
     private Task NavigateToWeightSummaryPage()
     {
-        return NavigationService.NavigateAsync(Routes.WeightSummaryPage);
+        return NavigationService.Navigate(Routes.WeightSummaryPage);
     }
 }

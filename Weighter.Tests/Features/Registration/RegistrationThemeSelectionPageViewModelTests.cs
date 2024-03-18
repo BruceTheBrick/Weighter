@@ -93,7 +93,7 @@ public class RegistrationThemeSelectionPageViewModelTests : UnitTestBase<Registr
         await Sut.ContinueCommand.ExecuteAsync(null);
 
         //Assert
-        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{Routes.DashboardPage}"));
+        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.Navigate($"/{Routes.NavigationPage}/{Routes.DashboardPage}"));
     }
 
     [Fact]
@@ -106,7 +106,7 @@ public class RegistrationThemeSelectionPageViewModelTests : UnitTestBase<Registr
         await Sut.ContinueCommand.ExecuteAsync(null);
 
         //Assert
-        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{Routes.DashboardPage}"), Times.Never);
+        Mocker.GetMock<IBaseService>().Verify(x => x.NavigationService.Navigate($"/{Routes.NavigationPage}/{Routes.DashboardPage}"), Times.Never);
     }
 
     #endregion

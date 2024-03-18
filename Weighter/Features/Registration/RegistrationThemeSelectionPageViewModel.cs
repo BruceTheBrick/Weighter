@@ -42,7 +42,7 @@ public partial class RegistrationThemeSelectionPageViewModel : BasePageViewModel
         var successfullyRegistered = _registrationDataLayer.Register(RegistrationDetails);
         if (successfullyRegistered)
         {
-            return NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{Routes.DashboardPage}");
+            return NavigationService.Navigate($"/{Routes.NavigationPage}/{Routes.DashboardPage}");
         }
 
         return Task.CompletedTask;

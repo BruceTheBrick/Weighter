@@ -40,6 +40,6 @@ public class InitPageViewModel : BasePageViewModel
     private Task StartApp()
     {
         var destinationPage = _userDataLayer.AnyUsersRegistered() ? Routes.LoginPage : Routes.RegistrationWelcomePage;
-        return NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{destinationPage}");
+        return NavigationService.Navigate($"/{Routes.NavigationPage}/{destinationPage}");
     }
 }

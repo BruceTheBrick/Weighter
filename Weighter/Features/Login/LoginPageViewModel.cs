@@ -12,6 +12,6 @@ public partial class LoginPageViewModel : BasePageViewModel
     [RelayCommand]
     private Task NavigateToDashboard()
     {
-        return NavigationService.NavigateAsync($"/{Routes.NavigationPage}/{Routes.DashboardPage}");
+        return NavigationService.Navigate($"/{Routes.NavigationPage}/{Routes.DashboardPage}");
     }
 }

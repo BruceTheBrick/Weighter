@@ -4,7 +4,7 @@ using SQLite;
 namespace Weighter.Core;
 
 [SQLite.Table(DbConstants.UserSettingsTable)]
-public class UserSettingsModel
+public class UserSettingsModel : BaseTable
 {
     [PrimaryKey]
     [AutoIncrement]

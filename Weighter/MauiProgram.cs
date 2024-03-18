@@ -2,6 +2,7 @@
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Markup;
 using Microsoft.Extensions.Logging;
+using UraniumUI;
 
 namespace Weighter;
 
@@ -18,7 +19,9 @@ public static class MauiProgram
             .UseMauiCommunityToolkit(ConfigureCommunityToolkit)
             .UseMauiCommunityToolkitMarkup()
             .ConfigureFonts(ConfigureFonts)
-            .ConfigureEssentials(AppActionManager.ConfigureEssentials);
+            .ConfigureEssentials(AppActionManager.ConfigureEssentials)
+            .UseUraniumUI()
+            .UseUraniumUIMaterial();
 
         EnableDebug(builder);
         return builder.Build();

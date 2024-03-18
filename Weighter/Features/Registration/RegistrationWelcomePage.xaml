@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<features:BasePage
     x:Class="Weighter.Features.RegistrationWelcomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:copyRegisters="clr-namespace:Weighter.Resources.Copy_Registers"
     xmlns:effects="clr-namespace:WhiteCane.Effects;assembly=WhiteCane"
     xmlns:features="clr-namespace:Weighter.Features"
+    xmlns:ui="clr-namespace:Weighter.UI"
     x:DataType="features:RegistrationWelcomePageViewModel">
-    <Grid Padding="16">
-        <VerticalStackLayout effects:AccessibilityTraits.Traits="Button" VerticalOptions="Center">
-            <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_001}" />
-            <Label Text="{x:Static copyRegisters:RegistrationRegister.REG_002}" />
+    <Grid Padding="16" RowDefinitions="*, Auto">
+        <VerticalStackLayout
+            Grid.Row="0"
+            effects:AccessibilityTraits.Traits="Button"
+            VerticalOptions="Center">
+            <ui:TintedImage HorizontalOptions="Center" Source="appicon" />
+            <Label HorizontalOptions="Center" Text="{x:Static copyRegisters:RegistrationRegister.REG_001}" />
+            <Label HorizontalOptions="Center" Text="{x:Static copyRegisters:RegistrationRegister.REG_002}" />
         </VerticalStackLayout>
         <Button
+            Grid.Row="1"
             Command="{Binding ContinueCommand}"
             Text="{x:Static copyRegisters:RegistrationRegister.REG_003}"
             VerticalOptions="End" />
     </Grid>
-</ContentPage>
+</features:BasePage>
