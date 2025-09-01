@@ -9,7 +9,7 @@ public partial class RegistrationUserDetailsPageViewModel : BasePageViewModel
     {
     }
 
-    public RegistrationDetailsViewModel RegistrationDetails { get; set; } = new ();
+    public RegistrationDetailsViewModel RegistrationDetails { get; set; } = new();
 
     public override void OnNavigatedTo(INavigationParameters parameters)
     {

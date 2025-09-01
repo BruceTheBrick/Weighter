@@ -26,6 +26,7 @@
                 StrokeShape="RoundRectangle 16">
                 <VerticalStackLayout>
                     <ui:TintedImage
+                        BackgroundColor="Black"
                         HeightRequest="60"
                         HorizontalOptions="Center"
                         Source="ic_sun"
@@ -33,6 +34,7 @@
                                                     Light='Black'}"
                         WidthRequest="60" />
                     <RadioButton
+                        BackgroundColor="Black"
                         HorizontalOptions="Center"
                         InputTransparent="True"
                         IsChecked="{Binding IsDarkModeEnabled, Converter={toolkit:InvertedBoolConverter}}" />
@@ -56,7 +58,10 @@
                         TintColor="{AppThemeBinding Dark='White',
                                                     Light='Black'}"
                         WidthRequest="60" />
-                    <RadioButton InputTransparent="True" HorizontalOptions="Center" IsChecked="{Binding IsDarkModeEnabled}" />
+                    <RadioButton
+                        HorizontalOptions="Center"
+                        InputTransparent="True"
+                        IsChecked="{Binding IsDarkModeEnabled}" />
                 </VerticalStackLayout>
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding UpdateThemeCommand}" CommandParameter="{x:Boolean True}" />

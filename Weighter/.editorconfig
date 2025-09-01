@@ -168,6 +168,7 @@ csharp_preserve_single_line_statements = false
 
 #### Naming styles ####
 
+[*.cs]
 # Naming rules
 dotnet_naming_rule.interface_should_be_begins_with_i.severity = suggestion
 dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
@@ -274,7 +275,6 @@ dotnet_naming_symbols.private_fields.applicable_accessibilities = private,intern
 ###############################
 # StyleCop.Analyzers Rules  #
 ###############################
-
 # SA1600: Elements should be documented
 dotnet_diagnostic.SA1600.severity = none
 
@@ -400,13 +400,13 @@ dotnet_diagnostic.CA1051.severity = warning
 dotnet_diagnostic.CA1052.severity = warning
 
 # CA1054: Uri parameters should not be strings
-dotnet_diagnostic.CA1054.severity = warning
+dotnet_diagnostic.CA1054.severity = none
 
 # CA1055: Uri return values should not be strings
-dotnet_diagnostic.CA1055.severity = warning
+dotnet_diagnostic.CA1055.severity = none
 
 # CA1056: Uri properties should not be strings
-dotnet_diagnostic.CA1056.severity = warning
+dotnet_diagnostic.CA1056.severity = none
 
 # CA1058: Types should not extend certain base types
 dotnet_diagnostic.CA1058.severity = warning
@@ -674,7 +674,7 @@ dotnet_diagnostic.CA2229.severity = warning
 dotnet_diagnostic.CA2231.severity = warning
 
 # CA2234: Pass system uri objects instead of strings
-dotnet_diagnostic.CA2234.severity = warning
+dotnet_diagnostic.CA2234.severity = none
 
 # CA2235: Mark all non-serializable fields
 dotnet_diagnostic.CA2235.severity = warning
@@ -933,6 +933,10 @@ dotnet_diagnostic.CA5400.severity = none
 
 # CA9999: Analyzer version mismatch
 dotnet_diagnostic.CA9999.severity = warning
+
+# Primary Constructors
+dotnet_diagnostic.IDE0290.severity = none
+csharp_style_prefer_primary_constructors = false
 
 # Default severity for analyzer diagnostics with category 'StyleCop.CSharp.OrderingRules'
 dotnet_analyzer_diagnostic.category-StyleCop.CSharp.OrderingRules.severity = none

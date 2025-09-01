@@ -2,27 +2,27 @@
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Markup;
 using Microsoft.Extensions.Logging;
-using UraniumUI;
 
 namespace Weighter;
 
 [AutoRoutes("Page")]
-[ExtraRoute(nameof(NavigationPage))]
+[ExtraRoute(nameof(NavigationPage), typeof(NavigationPage))]
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+        if (!OperatingSystem.IsAndroidVersionAtLeast(21))
+        {
+            throw new Exception("Android API level must be 21 or higher");
+        }
+
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
             .UsePrism(PrismStartup.Configure)
             .UseMauiCommunityToolkit(ConfigureCommunityToolkit)
             .UseMauiCommunityToolkitMarkup()
-            .ConfigureFonts(ConfigureFonts)
-            .ConfigureEssentials(AppActionManager.ConfigureEssentials)
-            .UseUraniumUI()
-            .UseUraniumUIMaterial();
-
+            .ConfigureFonts(ConfigureFonts);
         EnableDebug(builder);
         return builder.Build();
     }

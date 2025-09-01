@@ -12,6 +12,6 @@ public class UserModel : BaseTable
     public string LastName { get; set; }
     public string Nickname { get; set; }
     public Gender Gender { get; set; }
-    public DateTime DateOfBirth { get; set; }
+    public DateTime DateOfBirth { get; set; } = DateTime.Now;
     public DateTime LastLogin { get; set; }
 }

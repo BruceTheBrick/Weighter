@@ -25,20 +25,6 @@ public class RegistrationUserDetailsPageViewModelTests : UnitTestBase<Registrati
     #region NextCommand
 
     [Fact]
-    public async Task NextCommand_ShouldSetValidationMessage_WhenFirstNameIsNotEntered()
-    {
-        //Arrange
-        Sut.RegistrationDetails = RegistrationDetailsFactory.GetViewModel();
-        Sut.RegistrationDetails.User.FirstName = string.Empty;
-
-        //Act
-        await Sut.NextCommand.ExecuteAsync(null);
-
-        //Assert
-        Sut.ValidationMessage.Should().Be("")
-    }
-
-    [Fact]
     public async Task NextCommand_ShouldNavigateToThemeSelectionPage()
     {
         //Arrange

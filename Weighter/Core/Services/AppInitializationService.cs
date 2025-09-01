@@ -17,6 +17,7 @@ public class AppInitializationService : IAppInitializationService
 
     public async Task Initialize()
     {
+        await Task.CompletedTask;
         _weighterDatabase.Initialize();
         _themeService.Theme = _application.UserAppTheme;
     }

@@ -15,8 +15,8 @@ public class RegistrationDetailsViewModel
         Settings = userSettingsModel;
     }
 
-    public UserModel User { get; } = new ();
-    public UserSettingsModel Settings { get; } = new ();
+    public UserModel User { get; } = new();
+    public UserSettingsModel Settings { get; } = new();
 
     public void LinkSettingsToUser()
     {

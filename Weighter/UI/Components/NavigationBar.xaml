@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Grid
+    ColumnDefinitions="*, Auto, *"
     x:Class="Weighter.UI.NavigationBar"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ui="clr-namespace:Weighter.UI"
+    x:DataType="ui:NavigationBar"
     x:Name="This"
-    ColumnDefinitions="*, Auto, *">
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:ui="clr-namespace:Weighter.UI"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <!--  Left Action  -->
     <ContentView
-        Grid.Column="0"
-        Padding="16"
         AutomationProperties.IsInAccessibleTree="{Binding IsLeftActionInAccessibleTree, Source={x:Reference This}}"
+        Grid.Column="0"
         HorizontalOptions="Start"
+        Padding="16"
         SemanticProperties.Description="{Binding LeftAccessibilityName, Source={x:Reference This}}">
         <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <ui:TintedImage AutomationProperties.IsInAccessibleTree="False" Source="{Binding LeftIconSource, Source={x:Reference This}}" />
@@ -26,8 +27,8 @@
     <!--  Title  -->
     <ContentView
         Grid.Column="1"
-        Padding="16"
         HorizontalOptions="Center"
+        Padding="16"
         SemanticProperties.Description="{Binding Title, Source={x:Reference This}}"
         SemanticProperties.HeadingLevel="Level1">
         <Label
@@ -39,10 +40,10 @@
 
     <!--  Right Action  -->
     <ContentView
-        Grid.Column="2"
-        Padding="16"
         AutomationProperties.IsInAccessibleTree="{Binding IsRightActionInAccessibleTree, Source={x:Reference This}}"
+        Grid.Column="2"
         HorizontalOptions="End"
+        Padding="16"
         SemanticProperties.Description="{Binding RightAccessibilityName, Source={x:Reference This}}">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <ui:TintedImage AutomationProperties.IsInAccessibleTree="False" Source="{Binding RightIconSource, Source={x:Reference This}}" />
