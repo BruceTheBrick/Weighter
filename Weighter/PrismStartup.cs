@@ -1,53 +1,46 @@
 ﻿using System.Diagnostics;
-using Weighter.Core;
-using Weighter.Core.Services;
-using Weighter.Core.Services.Interfaces;
-using Weighter.Features.Dashboard;
-using Weighter.Features.Weight_Tracking;
-using INavigationService = Weighter.Core.Services.Interfaces.INavigationService;
+using INavigationService = Weighter.Core.INavigationService;
 
-namespace Weighter
+namespace Weighter;
+
+public static class PrismStartup
 {
-    public static class PrismStartup
+    public static void Configure(PrismAppBuilder builder)
     {
-        public static void Configure(PrismAppBuilder builder)
-        {
-            builder.RegisterTypes(RegisterTypes);
-            builder.OnAppStart(NavigationService.Startup);
-        }
+        builder.RegisterTypes(RegisterTypes);
+        builder.CreateWindow(NavigationService.Startup);
+    }
 
-        private static void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            RegisterServices(containerRegistry);
-            RegisterPagesForNavigation(containerRegistry);
-        }
+    private static void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        RegisterServices(containerRegistry);
+        RegisterPagesForNavigation(containerRegistry);
+    }
 
-        private static void RegisterServices(IContainerRegistry containerRegistry)
-        {
-            containerRegistry.Register<IBaseService, BaseService>();
-            containerRegistry.Register<INavigationService, NavigationService>();
-            containerRegistry.Register<IThemeService, ThemeService>();
-            
-            RegisterIosPlatformServices(containerRegistry);
-            RegisterAndroidPlatformServices(containerRegistry);
-        }
+    private static void RegisterServices(IContainerRegistry containerRegistry)
+    {
+        RegistrationManager.RegisterServices(containerRegistry);
 
-        private static void RegisterPagesForNavigation(IContainerRegistry containerRegistry)
-        {
-            containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
-            containerRegistry.RegisterForNavigation<WeightSummaryPage, WeightSummaryPageViewModel>();
-        }
+        RegisterIosPlatformServices(containerRegistry);
+        RegisterAndroidPlatformServices(containerRegistry);
+    }
 
-        [Conditional("IOS")]
-        private static void RegisterIosPlatformServices(IContainerRegistry containerRegistry)
-        {
+    private static void RegisterPagesForNavigation(IContainerRegistry containerRegistry)
+    {
+        RegistrationManager.RegisterPagesForNavigation(containerRegistry);
+        containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
+        containerRegistry.RegisterForNavigation<WeightSummaryPage, WeightSummaryPageViewModel>();
+    }
 
-        }
+    [Conditional("IOS")]
+    private static void RegisterIosPlatformServices(IContainerRegistry containerRegistry)
+    {
 
-        [Conditional("ANDROID")]
-        private static void RegisterAndroidPlatformServices(IContainerRegistry containerRegistry)
-        {
+    }
 
-        }
+    [Conditional("ANDROID")]
+    private static void RegisterAndroidPlatformServices(IContainerRegistry containerRegistry)
+    {
+
     }
 }

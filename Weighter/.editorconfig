@@ -468,6 +468,9 @@ dotnet_diagnostic.CA1501.severity = none
 # CA1502: Avoid excessive complexity
 dotnet_diagnostic.CA1502.severity = none
 
+# SA1106: Should not allow empty statements
+dotnet_diagnostic.SA1106.severity = none
+
 #########################
 # Maintainability rules #
 #########################

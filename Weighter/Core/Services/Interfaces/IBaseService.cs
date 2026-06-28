@@ -1,7 +1,6 @@
-﻿namespace Weighter.Core.Services.Interfaces
+﻿namespace Weighter.Core;
+
+public interface IBaseService
 {
-    public interface IBaseService
-    {
-        public INavigationService NavigationService { get; }
-    }
+    public INavigationService NavigationService { get; }
 }

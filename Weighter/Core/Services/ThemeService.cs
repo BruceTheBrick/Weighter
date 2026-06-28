@@ -1,37 +1,36 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Weighter.Core
+namespace Weighter.Core;
+
+public class ThemeService : IThemeService, INotifyPropertyChanged
 {
-    public class ThemeService : IThemeService, INotifyPropertyChanged
+    private AppTheme _theme;
+
+    public ThemeService()
     {
-        private AppTheme _theme;
+        Theme = AppTheme.Dark;
+    }
 
-        public ThemeService()
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    public AppTheme Theme
+    {
+        get => _theme;
+        set
         {
-            Theme = AppTheme.Dark;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public AppTheme Theme
-        {
-            get => _theme;
-            set
+            if (_theme == value)
             {
-                if (_theme == value)
-                {
-                    return;
-                }
-
-                _theme = value;
-                OnPropertyChanged();
+                return;
             }
-        }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            _theme = value;
+            OnPropertyChanged();
         }
+    }
+
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

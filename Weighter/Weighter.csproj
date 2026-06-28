@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
-        <TargetFrameworks>net7.0;net7.0-android;net7.0-ios;</TargetFrameworks>
-        <OutputType Condition="'$(TargetFramework)' != 'net7.0'">Exe</OutputType>
+        <TargetFrameworks>net10.0;net10.0-android;net10.0-ios;</TargetFrameworks>
+        <OutputType Condition="'$(TargetFramework)' != 'net10.0'">Exe</OutputType>
         <RootNamespace>Weighter</RootNamespace>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
@@ -19,7 +18,7 @@
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
 
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
     </PropertyGroup>
 
@@ -42,12 +41,15 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-        <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.191-beta" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.80" />
+        <PackageReference Include="Microsoft.Maui.Essentials" Version="10.0.80" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="14.2.0" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+        <PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.3.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.9" />
         <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
-        <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -55,30 +57,12 @@
     </ItemGroup>
 
     <!-- Android-->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
         <GoogleServicesJson Include="**\Android\google-services.json" />
     </ItemGroup>
 
-    <!-- Android -->
-    <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-android')) != true">
-        <Compile Remove="**\Android\**\*.cs" />
-        <None Include="**\Android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-        <None Remove="FodyWeavers.xml" />
-    </ItemGroup>
-
     <!-- IOS-->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
         <BundleResource Include="**\iOS\GoogleService-Info.plist" />
-    </ItemGroup>
-
-    <!-- iOS -->
-    <ItemGroup Condition="$(TargetFramework.StartsWith('net7.0-ios')) != true">
-        <Compile Remove="**\iOS\**\*.cs" />
-        <None Include="**\iOS\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="Platforms\Android\Services\" />
-      <Folder Include="Platforms\iOS\Services\" />
     </ItemGroup>
 </Project>
