@@ -2,13 +2,19 @@ using Weighter.Core;
 
 namespace Weighter.Services;
 
-public class StepCounterNativeService : IStepCounterNativeService
+public class StepCounterNativeService : IStepCounterNativeService, IDisposable
 {
     private readonly MotionSensorManager _sensorManager;
+    private readonly WeakEventManager _stepsUpdatedEvent =  new ();
 
     public StepCounterNativeService()
     {
         _sensorManager =  new MotionSensorManager();
+    }
+
+    public void Dispose()
+    {
+        _sensorManager.StepsChanged -= StepsChanged;
     }
 
     public void Initialize()
@@ -17,23 +23,13 @@ public class StepCounterNativeService : IStepCounterNativeService
         _sensorManager.Start();
     }
 
+    public void RegisterStepsUpdatedHandler(Action<object?, StepsChangedEvent> handler)
+    {
+        _stepsUpdatedEvent.AddEventHandler(handler, nameof(_sensorManager.StepsChanged));
+    }
+
     private void StepsChanged(object? sender, StepsChangedEvent stepsChangedEvent)
     {
-        // stepsChangedEvent.
-    }
-
-    public Dictionary<string, string> GetSteps()
-    {
-        return new Dictionary<string, string>();
-    }
-
-    public int GetStepsToday()
-    {
-        throw new NotImplementedException();
-    }
-
-    public int GetStepsWithDate(DateTimeOffset date)
-    {
-        throw new NotImplementedException();
+        _stepsUpdatedEvent.HandleEvent(sender, stepsChangedEvent, nameof(_sensorManager.StepsChanged));
     }
 }

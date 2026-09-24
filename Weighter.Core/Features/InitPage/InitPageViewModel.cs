@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using IInitialize = Weighter.Core.Services.IInitialize;
 using IInitializeAsync = Weighter.Core.Services.IInitializeAsync;
 

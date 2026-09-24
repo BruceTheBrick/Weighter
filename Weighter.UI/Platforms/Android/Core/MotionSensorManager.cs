@@ -67,7 +67,7 @@ public class MotionSensorManager
         {
         }
     }
-    
+
     private static DateTimeOffset TimestampToDateTimeOffset(long sensorTimestamp)
     {
         var now = DateTimeOffset.UtcNow;
@@ -76,5 +76,3 @@ public class MotionSensorManager
         return now.AddTicks(-(elapsedSinceEvent / 100));
     }
 }
-
-public record struct StepsChangedEvent(float Steps, DateTimeOffset Timestamp);

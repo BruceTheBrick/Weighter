@@ -14,4 +14,8 @@
         <HintPath>..\..\..\.nuget\packages\naveasy.abstractions\3.0.15\lib\net10.0-android36.0\Naveasy.Abstractions.dll</HintPath>
       </Reference>
     </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Maui.Core" Version="10.0.110" />
+    </ItemGroup>
 </Project>
