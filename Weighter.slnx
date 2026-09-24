@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="Weighter/Weighter.csproj" />
+  <Project Path="Weighter.Core/Weighter.Core.csproj" />
+  <Project Path="Weighter.UI\Weighter.UI.csproj" />
+  <Project Path="Weighter.UnitTests/Weighter.UnitTests.csproj" />
 </Solution>

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Naveasy">
+        <HintPath>..\..\..\.nuget\packages\naveasy\3.0.15\lib\net10.0-android36.0\Naveasy.dll</HintPath>
+      </Reference>
+      <Reference Include="Naveasy.Abstractions">
+        <HintPath>..\..\..\.nuget\packages\naveasy.abstractions\3.0.15\lib\net10.0-android36.0\Naveasy.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+</Project>
