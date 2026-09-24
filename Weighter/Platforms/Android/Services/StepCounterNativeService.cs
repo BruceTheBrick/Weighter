@@ -1,4 +1,4 @@
-using Weighter.Droid.Core;
+using Weighter.Core;
 
 namespace Weighter.Services;
 
@@ -19,11 +19,12 @@ public class StepCounterNativeService : IStepCounterNativeService
 
     private void StepsChanged(object? sender, StepsChangedEvent stepsChangedEvent)
     {
-        stepsChangedEvent.
+        // stepsChangedEvent.
     }
 
     public Dictionary<string, string> GetSteps()
     {
+        return new Dictionary<string, string>();
     }
 
     public int GetStepsToday()

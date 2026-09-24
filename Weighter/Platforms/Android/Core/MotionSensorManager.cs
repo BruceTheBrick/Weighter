@@ -2,7 +2,7 @@ using Android.Content;
 using Android.Hardware;
 using Android.OS;
 
-namespace Weighter.Droid.Core;
+namespace Weighter.Core;
 
 public class MotionSensorManager
 {
